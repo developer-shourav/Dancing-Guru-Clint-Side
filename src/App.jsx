@@ -1,15 +1,19 @@
-
-import './App.css'
+import "./App.css";
 
 function App() {
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <button className="btn btn-primary text-center">
+        <a
+          href="https://developer-shourav.web.app"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Visit My Profile
+        </a>
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
