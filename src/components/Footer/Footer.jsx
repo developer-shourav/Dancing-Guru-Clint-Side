@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
 import WebLogo from "../../assets/images/logo/logo-lg.png";
 import PaymentImg from "../../assets/images/payment-image/payment.png";
-import {FaPhoneAlt, FaWhatsapp} from 'react-icons/fa';
-import {HiLocationMarker, HiOutlineMail} from 'react-icons/hi';
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
+import { IoMdArrowDropright } from "react-icons/io";
 const Footer = () => {
   return (
     <div className="pt-20 pb-10">
@@ -23,7 +25,7 @@ const Footer = () => {
               </p>
 
               <div>
-                <span className="font-bold text-white text-lg border-b-4 border-red-600">
+                <span className="font-bold text-white text-lg border-b-4 border-[#E4444C]">
                   Pay With
                 </span>
                 <img className="-ms-5" src={PaymentImg} alt="" />
@@ -35,49 +37,56 @@ const Footer = () => {
                 Contact Information
               </h2>
               <div className="flex items-center mt-2 mb-5">
-                <span className="w-3/12 border-[3px] border-red-600 rounded"></span>
-                <span className="w-6/12 border-2 border-stone-600 rounded"></span>
+              <span className="w-4/12 md:w-3/12 border-[3px] border-[#E4444C] rounded"></span>
+                <span className="w-8/12 md:w-6/12 border-2 border-stone-600 rounded"></span>
               </div>
 
               <p className="flex items-center  gap-2">
-                <HiLocationMarker className="text-xl text-[#e5202d]" />{" "}
+                <HiLocationMarker className="text-xl text-[#E4444C]" />{" "}
                 <span className="text-[16px]">New Delhi, Delhi, India</span>
               </p>
 
               <p className="flex items-center gap-2 my-3">
-                <HiOutlineMail className="text-xl text-[#e5202d]" />{" "}
+                <HiOutlineMail className="text-xl text-[#E4444C]" />{" "}
                 <span>dancing.guru@gmail.com</span>
               </p>
               <p className="flex items-center gap-2">
-                <FaPhoneAlt className="text-sm ms-1 text-[#e5202d]" />{" "}
+                <FaPhoneAlt className="text-sm ms-1 text-[#E4444C]" />{" "}
                 <span>+501 654654</span>
               </p>
 
               <p className="flex items-center gap-2 my-3">
-                <FaWhatsapp className="text-lg text-[#e5202d]" />{" "}
+                <FaWhatsapp className="text-lg text-[#E4444C]" />{" "}
                 <span>+601 6054654</span>
               </p>
+            </div>
 
-             
-            </div>
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
+              <h2 className="text-stone-200 font-semibold logo-font-extra mt-5 text-xl">
+                Navigation
+              </h2>
+              <div className="flex items-center mt-2 mb-5">
+                <span className="w-4/12 md:w-3/12 border-[3px] border-[#E4444C] rounded"></span>
+                <span className="w-8/12 md:w-6/12 border-2 border-stone-600 rounded"></span>
+              </div>
+
+              <div className="list-none space-y-3">
+                <li>
+                    <NavLink className='flex items-center' to="/home"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Home</NavLink>
+                </li>
+                <li>
+                    <NavLink className='flex items-center' to="/contact"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Contact</NavLink>
+                </li>
+                <li>
+                    <NavLink className='flex items-center' to="/about"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> About</NavLink>
+                </li>
+                <li>
+                    <NavLink className='flex items-center' to="/register"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Register</NavLink>
+                </li>
+               
+              </div>
             </div>
+
             <div>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
