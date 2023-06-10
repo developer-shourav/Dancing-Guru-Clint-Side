@@ -1,5 +1,6 @@
 import HeaderCTA from "../HeaderCTA/HeaderCTA";
-import {FiMenu} from 'react-icons/fi'
+import {FiMenu, FiLogIn} from 'react-icons/fi'
+import {AiOutlineLogin} from 'react-icons/ai'
 import WebLogo from '../../assets/images/logo/logo-lg.png'
 import {  NavLink } from "react-router-dom";
 
@@ -9,18 +10,16 @@ const NavBar = () => {
       <li>
         <NavLink to='/home'>Home</NavLink>
       </li>
-
       <li>
-        <a>Item 2</a>
+        <NavLink to='/contact'>Contact</NavLink>
+      </li>
+      <li>
+        <NavLink to='/about'>About</NavLink>
+      </li>
+      <li>
+        <NavLink to='/register'>Register</NavLink>
       </li>
 
-      <li>
-        <a>Item 3</a>
-      </li>
-
-      <li>
-        <a>Item 4</a>
-      </li>
     </>
   );
 
@@ -32,14 +31,14 @@ const NavBar = () => {
       <div  className="bg-[#0d0d0d]">
       <div className="container mx-auto">
         <div className="navbar  text-stone-100   md:py-5">
-          <div className="navbar-start w-10/12">
+          <div className="navbar-start w-8/12">
             <div className="dropdown">
               <label tabIndex={0} className="text-xl lg:hidden">
                <FiMenu> </FiMenu>
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
+                className="menu menu-sm dropdown-content logo-font-extra mt-3 p-2 shadow bg-black rounded-box w-52"
               >
                 {menuItem}
               </ul>
@@ -52,10 +51,14 @@ const NavBar = () => {
 
           </div>
           <div className="navbar-center  hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{menuItem}</ul>
+            <ul className="menu menu-horizontal px-1 logo-font-extra">{menuItem}</ul>
           </div>
-          <div className="navbar-end w-2/12">
-            <a className="btn">Log In</a>
+          <div className="navbar-end w-4/12">
+             <span className="hidden md:inline"><a className="btn  rounded-full">Log In <FiLogIn className="text-xl"/></a></span>
+
+             <span className=" md:hidden"><a className="btn btn-sm rounded-full">Log In <FiLogIn className="text-xl"/></a></span>
+            
+            
           </div>
         </div>
       </div>
