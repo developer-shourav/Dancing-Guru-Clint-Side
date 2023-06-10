@@ -45,3 +45,7 @@ body{
 .testimonial-bg{
     background-color: #181818;
 }
+.active{
+    color: #E4444C;
+    background: transparent;
+}

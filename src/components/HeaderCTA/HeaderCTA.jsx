@@ -2,9 +2,9 @@ import {FaFacebook, FaInstagram, FaLinkedin, FaPhoneAlt, FaWhatsapp} from 'react
 import {HiLocationMarker, HiOutlineMail} from 'react-icons/hi';
 const HeaderCTA = () => {
     return (
-        <div className="bg-[#1B1B1B] mx-auto container">
+        <div className="bg-[#1B1B1B] mx-auto container hidden md:block">
 
-           <div className='flex justify-between py-5'>
+           <div className='flex justify-between py-2'>
                 <div className='flex items-center text-xl gap-2'>
                     <FaWhatsapp />
                     <FaFacebook/>
