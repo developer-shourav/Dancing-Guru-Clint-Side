@@ -4,12 +4,18 @@ import PaymentImg from "../../assets/images/payment-image/payment.png";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { HiLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { IoMdArrowDropright } from "react-icons/io";
+import InstaImg1 from '../../assets/images/footer-img/insta1.png';
+import InstaImg2 from '../../assets/images/footer-img/insta2.png';
+import InstaImg3 from '../../assets/images/footer-img/insta3.png';
+import InstaImg4 from '../../assets/images/footer-img/insta4.png';
+import InstaImg5 from '../../assets/images/footer-img/insta5.png';
+import InstaImg6 from '../../assets/images/footer-img/insta6.png';
 const Footer = () => {
   return (
-    <div className="pt-20 pb-10">
+    <div className="pt-20 pb-5">
       <div className="py-16 bg-[#0D0D0D]">
         <div className=" container mx-auto ">
-          <div className=" w-11/12 mx-auto grid  grid-cols-1 md:grid-cols-4 gap-4">
+          <div className=" w-11/12 md:w-12/12 lg:w-11/12 mx-auto grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-2 lg:gap-4">
             <div>
               <div className="flex items-center justify-start ps-4 md:ps-0">
                 <span className="logo-font-extra  text-[29px]  text-white md:ms-0 ">
@@ -88,30 +94,43 @@ const Footer = () => {
             </div>
 
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                libero.
-              </p>
+            <h2 className="text-stone-200 font-semibold logo-font-extra mt-5 text-xl">
+                Instagram
+              </h2>
+              <div className="flex items-center mt-2 mb-5">
+                <span className="w-4/12 md:w-3/12 border-[3px] border-[#E4444C] rounded"></span>
+                <span className="w-8/12 md:w-6/12 border-2 border-stone-600 rounded"></span>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg1} alt="" />
+                </div>
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg2} alt="" />
+                </div>
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg3} alt="" />
+                </div>
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg4} alt="" />
+                </div>
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg5} alt="" />
+                </div>
+                <div className="overflow-hidden rounded">
+                  <img className="rounded  hover:scale-125 cursor-pointer" src={InstaImg6} alt="" />
+                </div>
+                
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="text-center mt-10">
+      <div className="text-center mt-5">
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi,
-          corporis.
+        &copy; all Copyright <span className="text-[#E4444C] logo-font-extra"> Dancing Guru </span> reserved.
         </p>
       </div>
     </div>
