@@ -1,8 +1,8 @@
-
+import image404 from '../../assets/images/error-image/img-404.png'
 const Page404 = () => {
     return (
-        <div>
-            <h2 className="text-6xl font-bold text-red-600 text-center">404 Not Found</h2>
+        <div className='container mx-auto'>
+            <img className='text-center mx-auto' src={image404} alt="" />
         </div>
     );
 };

@@ -22,3 +22,24 @@ body{
 .logo-font-extra{
     font-family: 'Trade Winds', cursive;
 }
+
+
+/* ------------Custom Colors---------- */
+
+.main-color{
+    color:#E4444C;
+}
+
+.bg-with-content{
+    background-color: #0D0D0D;
+}
+
+.main-bg{
+    background-color: #1B1B1B;
+}
+.card-bg{
+    background-color: #292929;
+}
+.testimonial-bg{
+    background-color: #181818;
+}
