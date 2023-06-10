@@ -4,7 +4,7 @@ const HeaderCTA = () => {
     return (
         <div className="bg-[#1B1B1B] mx-auto container hidden md:block">
 
-           <div className='flex justify-between py-2'>
+           <div className='flex justify-between py-1'>
                 <div className='flex items-center text-xl gap-2'>
                     <FaWhatsapp />
                     <FaFacebook/>

@@ -30,7 +30,7 @@ const NavBar = () => {
       <HeaderCTA> </HeaderCTA>
       <div  className="bg-[#0d0d0d]">
       <div className="container mx-auto">
-        <div className="navbar  text-stone-100   md:py-5">
+        <div className="navbar  text-stone-100   md:py-2">
           <div className="navbar-start w-8/12">
             <div className="dropdown">
               <label tabIndex={0} className="text-xl lg:hidden">
