@@ -1,3 +1,24 @@
+/* -----------Main Font-----------  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+/* -----------Logo Font-----------  */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* -----------Logo Font Extra-----------  */
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----------Common Style----------- */
+body{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.logo-font{
+    font-family: 'Great Vibes', cursive;
+}
+
+.logo-font-extra{
+    font-family: 'Trade Winds', cursive;
+}
