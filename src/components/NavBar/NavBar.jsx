@@ -57,15 +57,15 @@ const NavBar = () => {
                 >
                   {menuItem}
                   <li className="  md:hidden">
-                    <a className="btn bg-black dark:bg-white text-[#E4444C] btn-sm rounded-full">
-                      Log In <FiLogIn className="text-xl" />
-                    </a>
+                    <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C] btn-sm rounded-full">
+                      Log In  <FiLogIn className="text-xl" />
+                    </NavLink>
                   </li>
 
                   <li className=" md:hidden">
-                <a className="btn btn-sm rounded-full border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 ">
+                <button  className="btn btn-sm rounded-full border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 ">
                   Log Out <AiOutlinePoweroff className="text-xl" />
-                </a>
+                </button>
               </li>
                 </ul>
               </div>
@@ -84,15 +84,15 @@ const NavBar = () => {
             </div>
             <div className="navbar-end  w-4/12">
               <span className="hidden md:inline">
-                <a className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
+                <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
                   Log In <FiLogIn className="text-xl" />
-                </a>
+                </NavLink>
               </span>
 
               <span className="hidden md:inline">
-                <a className="btn border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
+                <button className="btn border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
                   Log Out <AiOutlinePoweroff className="text-xl" />
-                </a>
+                </button>
               </span>
 
              
