@@ -13,7 +13,7 @@ import InstaImg6 from '../../assets/images/footer-img/insta6.png';
 const Footer = () => {
   return (
     <div className="pt-20 pb-5">
-      <div className="py-16 bg-[#0D0D0D]">
+      <div className="py-16 text-[#7D7D7D] bg-[#0D0D0D]">
         <div className=" container mx-auto ">
           <div className=" w-11/12 md:w-12/12 lg:w-11/12 mx-auto grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-2 lg:gap-4">
             <div>
