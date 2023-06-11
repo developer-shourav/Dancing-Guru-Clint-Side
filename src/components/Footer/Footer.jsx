@@ -99,7 +99,7 @@ const Footer = () => {
               </h2>
               <div className="flex items-center mt-2 mb-5">
                 <span className="w-4/12 md:w-3/12 border-[3px] border-[#E4444C] rounded"></span>
-                <span className="w-8/12 md:w-6/12 border-2 border-stone-600 rounded"></span>
+                <span className="w-8/12 md:w-9/12 border-2 border-stone-600 rounded"></span>
               </div>
 
               <div className="grid grid-cols-3 gap-3">

@@ -46,7 +46,7 @@ const NavBar = () => {
 
            <div className="flex items-center ps-4 md:ps-0">
             <span className="logo-font-extra  text-lg md:text-3xl  md:ms-0 ">Dancing Guru</span>
-            <img src={WebLogo} className="w-10 md:w-20" alt="" />
+            <img src={WebLogo} className="w-10 md:w-16" alt="" />
            </div>
 
           </div>
