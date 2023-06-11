@@ -32,7 +32,7 @@ const NavBar = () => {
         <NavLink to="/instructors">Instructors</NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/classes">Classes</NavLink>
       </li>
       <li>
         <NavLink to="/register">Register</NavLink>
@@ -53,7 +53,7 @@ const NavBar = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content logo-font-extra mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
+                  className="menu menu-sm dropdown-content font-semibold mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
                 >
                   {menuItem}
                   <li className="  md:hidden">
@@ -78,7 +78,7 @@ const NavBar = () => {
               </div>
             </div>
             <div className="navbar-center  hidden lg:flex">
-              <ul className="menu menu-horizontal px-1 logo-font-extra">
+              <ul className="menu menu-horizontal font-semibold px-1 ">
                 {menuItem}
               </ul>
             </div>
