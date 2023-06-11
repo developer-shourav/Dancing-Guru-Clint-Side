@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
 
             {
                 path:'dashboard',
-                element:<Dashboard> </Dashboard>
+                element:<PrivetRoutes> <Dashboard></Dashboard> </PrivetRoutes>
             },
 
             {

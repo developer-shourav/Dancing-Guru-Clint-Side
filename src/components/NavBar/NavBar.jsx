@@ -97,8 +97,10 @@ const NavBar = () => {
               </ul>
             </div>
             <div className="navbar-end  w-5/12">
+
+           
             <span
-                className="text-black bg-stone-300 dark:text-white dark:bg-gray-700 dark:bg-opacity-50 px-2 pt-2  rounded-full lg:tooltip lg:tooltip-bottom"
+                className="text-black me-2 bg-stone-300 dark:text-white dark:bg-gray-700 dark:bg-opacity-50 px-2 pt-2  rounded-full lg:tooltip lg:tooltip-bottom"
                 data-tip={
                   theme === "light" ? "Set Dark Mode" : "Set Light Mode"
                 }
@@ -130,20 +132,22 @@ const NavBar = () => {
                   </svg>
                 </label>
               </span>
+
+               
               <span className="hidden md:inline">
-                <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
+                <NavLink to='/login' className="btn border-1 dark:border-0 shadow-md border-[#E4444C] btn-sm bg-gray-950 dark:bg-white text-[#E4444C]  rounded-full">
                   Log In <FiLogIn className="text-xl" />
                 </NavLink>
               </span>
 
               <span className="hidden md:inline">
-                <button className="btn border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
+                <button className="btn btn-sm border-0 shadow-md bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
                   Log Out <AiOutlinePoweroff className="text-xl" />
                 </button>
               </span>
 
               {/* -----------User Image ---------- */}
-                  <div
+              <div
                     className="hidden lg:block "
                   >
                     <div className="avatar online mx-2">
@@ -152,6 +156,7 @@ const NavBar = () => {
                       </div>
                     </div>
                   </div>
+             
       
             </div>
           </div>
