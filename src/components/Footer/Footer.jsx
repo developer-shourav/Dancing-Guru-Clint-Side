@@ -81,13 +81,19 @@ const Footer = () => {
                     <NavLink className='flex items-center' to="/home"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Home</NavLink>
                 </li>
                 <li>
-                    <NavLink className='flex items-center' to="/contact"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Contact</NavLink>
+                    <NavLink className='flex items-center' to="/instructors"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Instructors</NavLink>
                 </li>
                 <li>
-                    <NavLink className='flex items-center' to="/about"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> About</NavLink>
+                    <NavLink className='flex items-center' to="/classes"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Classes</NavLink>
+                </li>
+                <li>
+                    <NavLink className='flex items-center' to="/dashboard"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Dashboard</NavLink>
                 </li>
                 <li>
                     <NavLink className='flex items-center' to="/register"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Register</NavLink>
+                </li>
+                <li>
+                    <NavLink className='flex items-center' to="/login"> <IoMdArrowDropright className="inline text-2xl text-[#E4444C]" /> Login</NavLink>
                 </li>
                
               </div>
