@@ -50,15 +50,25 @@ const NavBar = () => {
       <div className="bg-stone-100   dark:bg-[#0d0d0d] sticky top-0 left-0 z-50 shadow-xl">
         <div className="container  mx-auto">
           <div className="navbar font-bold dark:font-normal text-black    dark:text-stone-100   md:py-2">
-            <div className="navbar-start w-8/12">
+            <div className="navbar-start w-7/12">
               <div className="dropdown">
                 <label tabIndex={0} className="text-xl lg:hidden">
                   <FiMenu> </FiMenu>
                 </label>
+                
+
                 <ul
                   tabIndex={0}
                   className="menu menu-sm dropdown-content font-semibold mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
                 >
+                  {/* -----------User Image ---------- */}
+                  <div className="mb-2 mx-auto">
+                  <div className="avatar online mx-2">
+                      <div className="w-12 rounded-full">
+                        <img src="https://www.momjunction.com/wp-content/uploads/2015/05/The-Story-Of-The-Birth-Of-Lord-Krishna-For-Your-Kid-910x1024.jpg" />
+                      </div>
+                    </div>
+                  </div>
                   {menuItem}
                   <li className="  md:hidden">
                     <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C] btn-sm rounded-full">
@@ -86,22 +96,8 @@ const NavBar = () => {
                 {menuItem}
               </ul>
             </div>
-            <div className="navbar-end  w-4/12">
-              <span className="hidden md:inline">
-                <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
-                  Log In <FiLogIn className="text-xl" />
-                </NavLink>
-              </span>
-
-              <span className="hidden md:inline">
-                <button className="btn border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
-                  Log Out <AiOutlinePoweroff className="text-xl" />
-                </button>
-              </span>
-
-             
-
-              <span
+            <div className="navbar-end  w-5/12">
+            <span
                 className="text-black bg-stone-300 dark:text-white dark:bg-gray-700 dark:bg-opacity-50 px-2 pt-2  rounded-full lg:tooltip lg:tooltip-bottom"
                 data-tip={
                   theme === "light" ? "Set Dark Mode" : "Set Light Mode"
@@ -134,6 +130,29 @@ const NavBar = () => {
                   </svg>
                 </label>
               </span>
+              <span className="hidden md:inline">
+                <NavLink to='/login' className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
+                  Log In <FiLogIn className="text-xl" />
+                </NavLink>
+              </span>
+
+              <span className="hidden md:inline">
+                <button className="btn border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 rounded-full">
+                  Log Out <AiOutlinePoweroff className="text-xl" />
+                </button>
+              </span>
+
+              {/* -----------User Image ---------- */}
+                  <div
+                    className="hidden lg:block "
+                  >
+                    <div className="avatar online mx-2">
+                      <div className="w-12 rounded-full">
+                        <img src='https://www.momjunction.com/wp-content/uploads/2015/05/The-Story-Of-The-Birth-Of-Lord-Krishna-For-Your-Kid-910x1024.jpg' />
+                      </div>
+                    </div>
+                  </div>
+      
             </div>
           </div>
         </div>
