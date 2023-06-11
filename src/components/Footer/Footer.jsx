@@ -31,7 +31,7 @@ const Footer = () => {
               </p>
 
               <div>
-                <span className="font-bold text-white text-lg border-b-4 border-[#E4444C]">
+                <span className="font-bold text-white text-lg ">
                   Pay With
                 </span>
                 <img className="-ms-5" src={PaymentImg} alt="" />

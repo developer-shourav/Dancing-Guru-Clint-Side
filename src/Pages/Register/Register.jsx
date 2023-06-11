@@ -52,13 +52,25 @@ const Register = () => {
                       />
                     </div>
                     <div className="form-control">
-                      <label className="label ">
+                      <label className="label">
                         <span className="label-text dark:text-stone-200">Password</span>
                       </label>
                       <input
                         type="password"
                         placeholder="Password"
                         name="password"
+                        required
+                        className="input input-bordered dark:bg-[#1B1B1B]"
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label ">
+                        <span className="label-text dark:text-stone-200">Confirm Password</span>
+                      </label>
+                      <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        name="passwordConfirm"
                         required
                         className="input input-bordered dark:bg-[#1B1B1B]"
                       />
