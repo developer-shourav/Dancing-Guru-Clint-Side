@@ -45,7 +45,7 @@ const NavBar = () => {
 
       <div className="bg-stone-100   dark:bg-[#0d0d0d] sticky top-0 left-0 z-50 shadow-xl">
         <div className="container  mx-auto">
-          <div className="navbar font-bold dark:font-normal text-black shadow-lg   dark:text-stone-100   md:py-2">
+          <div className="navbar font-bold dark:font-normal text-black    dark:text-stone-100   md:py-2">
             <div className="navbar-start w-8/12">
               <div className="dropdown">
                 <label tabIndex={0} className="text-xl lg:hidden">
@@ -53,11 +53,11 @@ const NavBar = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content logo-font-extra mt-3 p-2 shadow-xl bg-slate-100  dark:bg-black rounded-box w-52"
+                  className="menu menu-sm dropdown-content logo-font-extra mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
                 >
                   {menuItem}
                   <li className="  md:hidden">
-                    <a className="btn bg-black text-[#E4444C] btn-sm rounded-full">
+                    <a className="btn bg-black dark:bg-white text-[#E4444C] btn-sm rounded-full">
                       Log In <FiLogIn className="text-xl" />
                     </a>
                   </li>
@@ -84,7 +84,7 @@ const NavBar = () => {
             </div>
             <div className="navbar-end  w-4/12">
               <span className="hidden md:inline">
-                <a className="btn bg-black text-[#E4444C]  rounded-full">
+                <a className="btn bg-black dark:bg-white text-[#E4444C]  rounded-full">
                   Log In <FiLogIn className="text-xl" />
                 </a>
               </span>
