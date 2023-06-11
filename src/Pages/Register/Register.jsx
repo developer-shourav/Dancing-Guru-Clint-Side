@@ -11,8 +11,8 @@ const Register = () => {
             <div className="w-full">
              
               <div className="card flex-shrink-0 w-full text-black dark:text-[#dbdbdb]  dark:bg-[#131212] ">
-                <div className="card-body ">
-                  <h2 className="text-3xl font-bold text-[#E4444C]  ">Register</h2>
+                <div className="card-body p-4 md:p-8 ">
+                  <h2 className="text-3xl font-bold text-[#E4444C] text-center ">Register</h2>
 
                   <form >
                     <div className="form-control ">
@@ -85,10 +85,14 @@ const Register = () => {
                     </div>
                   </form>
                   
-                  <div className="divider -mt-1 ">Or</div>
+                  <div className="flex justify-center items-center mt-2">
+                    <hr className="inline-block w-3/6 border-1 border-[#E4444C]" />{" "}
+                    <span className="mx-1  text-black  dark:text-white">Or</span>{" "}
+                    <hr className="inline-block border-1 w-3/6 border-[#E4444C]" />
+                  </div>
   
                   
-                  <button  className="btn -mt-5  bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline "><img className="w-5 me-2" src={GoogleIcon} alt="" />Register With Google</button> 
+                  <button  className="btn bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline "><img className="w-5 me-2" src={GoogleIcon} alt="" />Register With Google</button> 
                 </div>
               </div>
             </div>
