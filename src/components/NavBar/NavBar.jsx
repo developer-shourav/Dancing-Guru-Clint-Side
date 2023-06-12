@@ -84,7 +84,7 @@ const NavBar = () => {
 
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content font-semibold mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
+                className="menu menu-sm dropdown-content font-[500] mt-3 p-2 shadow-xl bg-gray-300  dark:bg-black rounded-box w-52"
               >
                 {/* -----------User Image ---------- */}
                 {user && (
@@ -102,7 +102,7 @@ const NavBar = () => {
                   <li className=" md:hidden">
                     <button
                       onClick={handleLogOut}
-                      className="btn btn-sm rounded-full border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 "
+                      className="btn btn-sm font-[500] mt-2 rounded-full border-0 bg-[#E4444C] hover:bg-[#a8060e] hover:text-stone-300 "
                     >
                       Log Out <AiOutlinePoweroff className="text-xl" />
                     </button>
@@ -111,7 +111,7 @@ const NavBar = () => {
                   <li className="  md:hidden">
                     <NavLink
                       to="/login"
-                      className="btn bg-black dark:bg-white text-[#E4444C] btn-sm rounded-full"
+                      className="btn bg-black font-[500] mt-2 dark:bg-white text-[#E4444C] btn-sm rounded-full"
                     >
                       Log In <FiLogIn className="text-xl" />
                     </NavLink>

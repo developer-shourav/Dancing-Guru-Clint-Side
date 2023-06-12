@@ -1,12 +1,17 @@
 import useTitle from "../../hooks/useTitle";
 import GoogleIcon from "../../assets/images/icons/google.png";
-import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
-
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Register = () => {
   /* ---------Dynamic Title based on Page-------- */
@@ -23,22 +28,18 @@ const Register = () => {
   const { createEmailPassUser, registerWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const redirectLocation = location?.state?.from?.pathname || '/home';
-  const [errorMessage, setErrorMessage] = useState('');
+  const redirectLocation = location?.state?.from?.pathname || "/home";
+  const [errorMessage, setErrorMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const registerSuccessAlt = () => {
-    Swal.fire(
-      'Welcome',
-      'Register Successful',
-      'success'
-    )
-    reset()
-  }
+    Swal.fire("Welcome", "Register Successful", "success");
+    reset();
+  };
 
-
-  const onSubmit = data => {
-     /*----- Reset Error Massage ------- */
-     setErrorMessage('')
+  const onSubmit = (data) => {
+    /*----- Reset Error Massage ------- */
+    setErrorMessage("");
     /* -------Form Data Collection -------------- */
     const name = data?.name;
     const email = data?.email;
@@ -51,56 +52,54 @@ const Register = () => {
       email,
       password,
       confirmPassword,
-      photo
+      photo,
     };
-     /* -----------Password Validation----------- */
-     if( password !== confirmPassword){
-     
-      setErrorMessage("Error: Your 'password' and 'Confirm password' aren't the same.")
-      return ;
-    }
-
-    else{
+    /* -----------Password Validation----------- */
+    if (password !== confirmPassword) {
+      setErrorMessage(
+        "Error: Your 'password' and 'Confirm password' aren't the same."
+      );
+      return;
+    } else {
       /* ------- Email password User creation -------------- */
       createEmailPassUser(email, password)
-      .then((result) => {
-        const createdUser = result.user;
-        addUserNameAndImage(result.user, name, photo);
-        registerSuccessAlt()
-      })
-  
-      .catch((error) => {
-        setErrorMessage(error.message.slice(10))
-      });
-      }
+        .then((result) => {
+          const createdUser = result.user;
+          addUserNameAndImage(result.user, name, photo);
+          registerSuccessAlt();
+        })
+
+        .catch((error) => {
+          setErrorMessage(error.message.slice(10));
+        });
+    }
   };
 
-/* ------- Adding user name and Profile picture -------------- */
+  /* ------- Adding user name and Profile picture -------------- */
   const addUserNameAndImage = (user, userName, imageUrl) => {
-    setErrorMessage('')
+    setErrorMessage("");
     updateProfile(user, { displayName: userName, photoURL: imageUrl })
       .then(() => {
         navigate(redirectLocation);
       })
       .catch((error) => {
-        setErrorMessage(error.message.slice(10))
+        setErrorMessage(error.message.slice(10));
       });
   };
 
   /* ------- Google Register with popup-------------- */
   const handleGoogleRegister = () => {
-    setErrorMessage('')
+    setErrorMessage("");
     registerWithGoogle()
-    .then( result => {
-      const loggedInUser = result.user;
-      navigate(redirectLocation)
-      registerSuccessAlt()
-      
-    })
-    .catch( error =>{
-      setErrorMessage(error.message.slice(10))
-    })
-  }
+      .then((result) => {
+        const loggedInUser = result.user;
+        navigate(redirectLocation);
+        registerSuccessAlt();
+      })
+      .catch((error) => {
+        setErrorMessage(error.message.slice(10));
+      });
+  };
 
   return (
     <div className="pb-20  bg-slate-200 dark:bg-[#1B1B1B] ">
@@ -171,17 +170,17 @@ const Register = () => {
                       </span>
                     )}
                   </div>
-                  <div className="form-control">
+                  <div className="form-control relative">
                     <label className="label">
                       <span className="label-text dark:text-stone-200">
                         Password
                       </span>
                     </label>
                     <input
-                      type="password"
+                      type={showPassword === false ? "password" : "text"}
                       placeholder="Password"
                       name="password"
-                      className="input input-bordered dark:bg-[#1B1B1B]"
+                      className="input input-bordered  dark:bg-[#1B1B1B]"
                       {...register("password", {
                         required: true,
                         minLength: 6,
@@ -190,6 +189,24 @@ const Register = () => {
                           /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                       })}
                     />
+                    {/* ---------Password Shower------ */}
+                    <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute bottom-3 cursor-pointer right-5"
+                    >
+                      {" "}
+                      {showPassword === false ? (
+                        <AiFillEye
+                          title="See Password"
+                          className="text-lg inline"
+                        />
+                      ) : (
+                        <AiFillEyeInvisible
+                          title="Hide Password"
+                          className="text-lg inline"
+                        />
+                      )}{" "}
+                    </span>
 
                     {errors.password?.type === "pattern" && (
                       <span className="text-red-500 text-sm">
@@ -218,14 +235,14 @@ const Register = () => {
                       </span>
                     )}
                   </div>
-                  <div className="form-control">
+                  <div className="form-control relative">
                     <label className="label ">
                       <span className="label-text dark:text-stone-200">
                         Confirm Password
                       </span>
                     </label>
                     <input
-                      type="password"
+                      type={showPassword === false ? "password" : "text"}
                       placeholder="Confirm Password"
                       name="passwordConfirm"
                       className="input input-bordered dark:bg-[#1B1B1B]"
@@ -237,6 +254,24 @@ const Register = () => {
                           /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
                       })}
                     />
+                     {/* ---------Password Shower------ */}
+                     <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute top-12 cursor-pointer right-5"
+                    >
+                      {" "}
+                      {showPassword === false ? (
+                        <AiFillEye
+                          title="See Password"
+                          className="text-lg inline"
+                        />
+                      ) : (
+                        <AiFillEyeInvisible
+                          title="Hide Password"
+                          className="text-lg inline"
+                        />
+                      )}{" "}
+                    </span>
                     {errors.passwordConfirm?.type === "required" && (
                       <span className="text-red-500 text-sm">
                         <small>Confirm Password is required</small>
@@ -255,7 +290,6 @@ const Register = () => {
                       </span>
                     )}
 
-                  
                     <label className="label">
                       <p className="text-sm dark:text-stone-400">
                         Already Registered? Please{" "}
@@ -285,7 +319,10 @@ const Register = () => {
                   <hr className="inline-block border-1 w-3/6 border-[#E4444C]" />
                 </div>
 
-                <button onClick={handleGoogleRegister} className="btn bg-[#1D1D1D]  text-stone-100 rounded-full  normal-case btn-outline font-[500]">
+                <button
+                  onClick={handleGoogleRegister}
+                  className="btn bg-[#1D1D1D]  text-stone-100 rounded-full  normal-case btn-outline font-[500]"
+                >
                   <img className="w-5 me-2" src={GoogleIcon} alt="" />
                   Register With Google
                 </button>
