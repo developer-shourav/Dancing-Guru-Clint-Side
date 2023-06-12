@@ -37,8 +37,40 @@ const Login = () => {
   };
 
    const onSubmit = data => {
-    console.log(data);
-   }
+    /*----- Reset Error Massage field------- */
+    setErrorText('')
+    /* -------Form Data Collection -------------- */
+    const email = data?.email;
+    const password = data?.password;
+
+    /* ------- Email password Based Login System -------------- */
+    signInUserWithEmail(email, password)
+    .then( result => {
+      const loggedInUser = result.user;
+      loginSuccessAlt()
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      setErrorText(error.message.slice(10))
+    })
+
+   };
+
+   /* ------- Google Popup Login-------------- */
+  const handleGoogleLogin = () => {
+    setErrorText('')
+    registerWithGoogle()
+    .then( result => {
+      const loggedInUser = result.user;
+      loginSuccessAlt()
+      navigate(redirectLocation)
+      
+    })
+    .catch( error =>{
+      setErrorText(error.message.slice(10))
+    })
+  }
 
 
   return (
@@ -109,7 +141,7 @@ const Login = () => {
                   </div>
 
                   {/* --------Error Message -------- */}
-                  <p className="text-red-500 font-semibold">{errorText}</p>
+                  <p className="text-red-500">{errorText}</p>
                   <div className="form-control mt-6">
                     <input
                       className="btn rounded-full  text-white bg-[#E4444C] border-0 hover:bg-[#af2e35]"
@@ -127,7 +159,7 @@ const Login = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <button className="btn  bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline w-full">
+                  <button onClick={handleGoogleLogin} className="btn  bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline w-full">
                     <img className="w-5 me-2" src={GoogleIcon} alt="" />
                     Google
                   </button>
