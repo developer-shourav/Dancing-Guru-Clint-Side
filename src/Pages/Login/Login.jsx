@@ -144,7 +144,7 @@ const Login = () => {
                   <p className="text-red-500">{errorText}</p>
                   <div className="form-control mt-6">
                     <input
-                      className="btn rounded-full  text-white bg-[#E4444C] border-0 hover:bg-[#af2e35]"
+                      className="btn rounded-full font-[500]  text-white bg-[#E4444C] border-0 hover:bg-[#af2e35]"
                       type="submit"
                       value="Login"
                     />
@@ -159,7 +159,7 @@ const Login = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <button onClick={handleGoogleLogin} className="btn  bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline w-full">
+                  <button onClick={handleGoogleLogin} className="btn font-[500]  bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline w-full">
                     <img className="w-5 me-2" src={GoogleIcon} alt="" />
                     Google
                   </button>

@@ -272,7 +272,7 @@ const Register = () => {
                   <p className="text-red-500 ">{errorMessage}</p>
                   <div className="form-control mt-2">
                     <input
-                      className="btn rounded-full bg-[#E4444C] text-white border-0 hover:bg-[#88191e]"
+                      className="btn rounded-full font-[500] bg-[#E4444C] text-stone-100 border-0 hover:bg-[#88191e]"
                       type="submit"
                       value="Register"
                     />
@@ -285,7 +285,7 @@ const Register = () => {
                   <hr className="inline-block border-1 w-3/6 border-[#E4444C]" />
                 </div>
 
-                <button onClick={handleGoogleRegister} className="btn bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline ">
+                <button onClick={handleGoogleRegister} className="btn bg-[#1D1D1D]  text-stone-100 rounded-full  normal-case btn-outline font-[500]">
                   <img className="w-5 me-2" src={GoogleIcon} alt="" />
                   Register With Google
                 </button>
