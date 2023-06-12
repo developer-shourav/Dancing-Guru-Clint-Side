@@ -1,16 +1,78 @@
 import useTitle from "../../../hooks/useTitle";
 import TopSlider from "../TopSlider/TopSlider";
-
+import { ScrollRestoration } from "react-router-dom";
+import dancer1 from "../../../assets/images/homeSlider-img/dancer-1.png";
+import { FiArrowRight } from "react-icons/fi";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 const Home = () => {
-    /* ---------Dynamic Title based on Page-------- */
-    useTitle('Home')
-    return (
-        <div> 
-            <h2 className="text-3xl font-bold  text-center dark:text-red-500">This is Home</h2>
-            <TopSlider> </TopSlider>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem nam voluptatem voluptates est, perspiciatis ut ipsa. Deserunt natus fugit placeat qui culpa fuga labore corporis impedit. Eos, odit qui eligendi distinctio quam dolores recusandae molestias iste harum dolorum voluptates amet delectus neque necessitatibus, maxime inventore ex rem itaque aperiam praesentium, modi nesciunt quibusdam sint. Harum, dolorum amet at impedit repellendus laudantium autem laboriosam itaque provident facilis. Est at non nobis odio minima, iusto illum incidunt qui, alias ab nesciunt aspernatur ratione nostrum ipsa! Accusantium incidunt velit soluta suscipit quas atque, error dolores quaerat sint assumenda nobis iste commodi molestiae corporis voluptatibus tempore nam ipsam? Explicabo repellendus deleniti repudiandae non culpa porro ducimus soluta tempore enim. Assumenda exercitationem cum sunt recusandae laudantium nesciunt aperiam reiciendis nisi vero totam culpa incidunt maiores tempora aspernatur, voluptatibus at beatae necessitatibus saepe veniam laboriosam dolorem, odio quia! Beatae, quia nam. Laudantium consequatur quos magnam reprehenderit, commodi nostrum iure? Porro sint soluta earum cum, a rerum quasi possimus inventore labore? Alias pariatur, unde animi commodi repellendus harum! Unde cumque aliquid ipsam accusamus ut aut minima. Delectus sapiente eligendi beatae odio aliquid nostrum pariatur, libero dolor. Voluptatibus, tempore, non accusantium magnam iure facilis voluptate distinctio est temporibus hic id possimus repudiandae! Nulla ullam veritatis numquam expedita minima. Eligendi tempore voluptatum praesentium sit rerum assumenda hic, facilis, accusantium illo dolores nemo quasi est iste! Praesentium quos consequuntur quidem impedit nostrum corrupti dignissimos nesciunt. Ullam, optio corporis doloremque sit incidunt eos pariatur totam modi nostrum molestiae dolorem, cumque laborum cupiditate! Vel reprehenderit autem sunt accusamus magnam consequuntur ducimus iusto commodi unde! Dolorem, hic. Earum non quod minus deserunt itaque fuga delectus, corporis reiciendis molestias cupiditate expedita adipisci eveniet necessitatibus iste quasi excepturi aliquid? Harum optio, ullam atque officiis cumque doloremque hic, nesciunt numquam molestiae voluptatibus sunt. Ea neque ducimus voluptate placeat, sit accusamus veniam molestiae dolores vitae aperiam quibusdam beatae consequatur, aliquid nulla sunt perspiciatis nihil? Mollitia, laboriosam temporibus! Culpa, ipsam? Architecto quo non excepturi maiores nesciunt sapiente dolorem voluptatibus aut minus eum doloremque error, voluptas, veniam amet reiciendis aliquid libero! Quaerat officiis facilis magni sapiente deleniti earum nostrum, nihil necessitatibus eveniet in iste quia laudantium enim omnis accusamus illum quae eius pariatur voluptatibus praesentium itaque dolore aliquid. Laudantium dolor, voluptas suscipit possimus ipsum magni blanditiis similique eveniet, veniam nam dicta ex. Quidem quod temporibus suscipit ratione excepturi deleniti, quaerat esse dicta cupiditate amet ullam veritatis aut eum. Vero omnis nesciunt, harum officia alias totam enim maiores pariatur quam minima perspiciatis sint quod, aliquam quasi. Modi, eveniet itaque. Voluptatem, nemo rem aperiam magnam sed nulla, aliquam vero corporis, velit est totam minima reprehenderit ea provident impedit omnis architecto? Repudiandae vitae culpa ratione autem quaerat maiores eius quam porro possimus cupiditate nostrum dolores excepturi impedit exercitationem, dolorem alias magni at dolore eaque, natus, totam quo. Nam reprehenderit iure inventore id quo rerum cum beatae natus. Eligendi aspernatur amet consequuntur, nihil sunt earum? Et, eos nobis blanditiis maxime omnis odio iure distinctio totam, eaque minus dignissimos eligendi necessitatibus, nam fugiat eius.</p>
+  /* ---------Dynamic Title based on Page-------- */
+  useTitle("Home");
+  return (
+    <div>
+      {/*  <TopSlider> </TopSlider> */}
+
+      <div className=" pb-5 md:py-10 bg-[#89183E] dark:bg-[#17161D]">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-start px-5 ">
+            <div className=" md:w-7/12 ">
+              <img src={dancer1} className=" md:w-10/12 mx-auto mt-5 md:mt-0" alt="" />
+            </div>
+            <div className="md:w-5/12 mt-5 md:mt-20">
+              <p className="text-[#C0BFC4] font-[500] mb-2">
+                Enjoy each step along the way.
+              </p>
+              <h1 className="text-4xl lg:text-5xl font-bold text-[#17161D] dark:text-[#C0BFC4] ">
+                Learn to dance{" "}
+              </h1>
+              <h1 className=" text-3xl md:text-4xl lg:text-5xl  font-bold text-[#17161D]  dark:text-[#C0BFC4] mt-2 md:mt-5 ">
+                with style
+              </h1>
+
+              <div className=" mt-3 md:mt-10 flex items-center gap-5">
+                {" "}
+                <p
+                  style={{ letterSpacing: "2px" }}
+                  className="uppercase font-bold text-[#17161D] dark:text-[#8a8a8a] "
+                >
+                  Learn More
+                </p>{" "}
+                <span className="p-2 border-[#17161D] dark:border-[#8a8a8a] rounded-full border-2">
+                  {" "}
+                  <FiArrowRight className="text-[#17161D] dark:text-[#8a8a8a]" />{" "}
+                </span>
+              </div>
+
+              <div className="mt-8 md:mt-20 flex items-center  gap-x-5">
+                <p
+                  style={{ letterSpacing: "2px" }}
+                  className="uppercase text-[14px] text-[#fff] "
+                >
+                  FOLLOW US
+                </p>{" "}
+                <hr className="border-1 md:w-1/12" />
+                <div className="flex">
+                  <span className="p-2  rounded-full">
+                    {" "}
+                    <FaFacebook className="text-[#17161D] dark:text-[#8a8a8a] text-xl" />{" "}
+                  </span>{" "}
+                  <span className="p-2 b rounded-full ">
+                    {" "}
+                    <FaInstagram className="text-[#17161D] dark:text-[#8a8a8a] text-xl" />{" "}
+                  </span>
+                  <span className="p-2  rounded-full">
+                    {" "}
+                    <FaTwitter className="text-[#17161D] dark:text-[#8a8a8a] text-xl" />{" "}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+
+      <ScrollRestoration />
+    </div>
+  );
 };
 
 export default Home;

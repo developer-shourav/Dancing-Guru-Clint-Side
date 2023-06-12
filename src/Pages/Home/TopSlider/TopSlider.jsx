@@ -33,102 +33,14 @@ const TopSlider = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        {/* ----------------Website Top Banner Slider Item One --------------------- */}
-        <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
-               <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'>Chose The Best </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Signature Dish </h1>
-                
-                
-                <p className='md:w-3/4 text-gray-700 mb-5'><strong>Biriyani.</strong> The Indian Dish you like most. The special rice. We have most expert Chef and various recipe on it. Try our awesome food item now.</p>
-                <button style={{background:'red'}} className='btn border-0 rounded-none px-8 '> Shop Now </button>
-
-                 <div className=' mt-5 md:mt-10 font-bold flex gap-20'>
-
-                   <div>
-                     <h3 className=' text-2xl md:text-3xl'>1534+</h3>
-                     <p ><small>Total Sells</small></p>
-                   </div>
-
-                   <div>
-                   <h3 className=' text-2xl md:text-3xl'>1000+</h3>
-                     <p><small>Monthly Customers</small></p>
-                   </div>
-
-                 </div>
-               </div>
-
-               <div className='md:w-1/2'>
-                <img className="rounded"  src={dancer1} alt="" />
-               </div>
-            </div></SwiperSlide>
-
-
-
-   {/* ----------------Website Top Banner Slider Item Two --------------------- */}
-        <SwiperSlide> <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
-               <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'> Chose Your Top </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> Top Plater Here </h1>
-                
-                
-                <p className='md:w-3/4 text-gray-700 mb-5'>We stands for quality, authenticity, trust and satisfaction. We have a massive collection of products and brands that you will love.</p>
-                <button style={{background:'red'}} className='btn border-0 rounded-none px-8 '> Shop Now </button>
-
-                 <div className=' mt-5 md:mt-10 font-bold flex gap-20'>
-
-                   <div>
-                     <h3 className=' text-2xl md:text-3xl'>1534+</h3>
-                     <p ><small>Total Products</small></p>
-                   </div>
-
-                   <div>
-                   <h3 className=' text-2xl md:text-3xl'>1000+</h3>
-                     <p><small>Monthly Customers</small></p>
-                   </div>
-
-                 </div>
-               </div>
-
-               <div className='md:w-1/2'>
-                <img  className="rounded" src={dancer2} alt="" />
-               </div>
-            </div>
-            </SwiperSlide>
-
-
-
-
-        {/* ----------------Website Top Banner Slider Item Three --------------------- */}
         <SwiperSlide>
-        <div className='flex px-5 lg:px-0 flex-col-reverse md:flex-row my-4 md:my-8 lg:my-10 items-center justify-between'>
-               <div className='md:w-1/2 lg:ps-10'>
-                <h1 className='font-bold text-3xl md:text-5xl my-2 md:mb-5 color-red'> Find More Than </h1>
-                <h1 className='font-bold text-2xl  md:text-4xl lg:text-6xl mb-5'> 200 Vag Recipes </h1>
-                
-                
-                <p className='md:w-3/4 text-gray-700 mb-5'>We stands for quality, authenticity, trust and satisfaction. We have a massive collection of products and brands that you will love.</p>
-                <button style={{background:'red'}} className='btn border-0 rounded-none px-8 '> Shop Now </button>
-
-                 <div className=' mt-5 md:mt-10 font-bold flex gap-20'>
-
-                   <div>
-                     <h3 className=' text-2xl md:text-3xl'>1534+</h3>
-                     <p ><small>Total Products</small></p>
-                   </div>
-
-                   <div>
-                   <h3 className=' text-2xl md:text-3xl'>1000+</h3>
-                     <p><small>Monthly Customers</small></p>
-                   </div>
-
-                 </div>
-               </div>
-
-               <div className='md:w-1/2'>
-                <img className="rounded"  src={dancer3} alt="" />
-               </div>
-            </div>
+            <img src={dancer1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+            <img src={dancer2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+            <img src={dancer3} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>
