@@ -1,11 +1,23 @@
-import { Link, ScrollRestoration } from "react-router-dom";
+import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 import LoginImg from '../../assets/images/form-img/login.png';
 import GoogleIcon from '../../assets/images/icons/google.png';
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 const Login = () => {
 
     /* ---------Dynamic Title based on Page-------- */
     useTitle('Login')
+    const {signInUserWithEmail, registerWithGoogle} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    /* ----------Previous location ---------- */
+    const redirectLocation = location.state?.from?.pathname || '/home';
+  
+    /* --------Error Message shower */
+    const [errorText, setErrorText] = useState('');
+
+
     return (
         <div className="bg-slate-200 dark:bg-[#1B1B1B]  pb-20">
         <div className="container py-10 md:py-20 mx-auto">
@@ -59,7 +71,7 @@ const Login = () => {
                     </div>
   
                      {/* --------Error Message -------- */}
-                     <p className='text-red-500 font-semibold'></p>
+                     <p className='text-red-500 font-semibold'>{errorText}</p>
                     <div className="form-control mt-6">
                       <input
                         className="btn rounded-full  text-white bg-[#E4444C] border-0 hover:bg-[#af2e35]"
