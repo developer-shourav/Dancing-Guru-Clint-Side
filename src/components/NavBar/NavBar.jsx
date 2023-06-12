@@ -73,7 +73,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="bg-stone-100   dark:bg-[#0d0d0d] sticky top-0 left-0 z-50 shadow-xl">
+    <div className="bg-stone-100   dark:bg-[#0d0d0d] sticky top-0 left-0 z-50 shadow-lg">
       <div className="container  mx-auto">
         <div className="navbar font-[500] dark:font-normal text-black    dark:text-stone-200   md:py-2">
           <div className="navbar-start w-7/12">
