@@ -15,7 +15,7 @@ import dancer2 from "../../../assets/images/homeSlider-img/dancer-2.png";
 import dancer3 from "../../../assets/images/homeSlider-img/dancer-3.png";
 const TopSlider = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       
         {/* ----------------Website Top Banner Slider --------------------- */}
         <Swiper
