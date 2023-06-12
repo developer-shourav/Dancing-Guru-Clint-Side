@@ -36,7 +36,7 @@ const Register = () => {
   }
 
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
      /*----- Reset Error Massage ------- */
      setErrorMessage('')
     /* -------Form Data Collection -------------- */
