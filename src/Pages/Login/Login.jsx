@@ -11,6 +11,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+
+
+
 const Login = () => {
   /* ---------Dynamic Title based on Page-------- */
   useTitle("Login");
@@ -22,6 +26,8 @@ const Login = () => {
     reset,
   } = useForm();
   const { signInUserWithEmail, registerWithGoogle } = useContext(AuthContext);
+  /* -----------Password shower----------- */
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   /* ----------Previous location ---------- */
@@ -35,6 +41,8 @@ const Login = () => {
     Swal.fire("Welcome", "Login Successful", "success");
     reset()
   };
+
+
 
    const onSubmit = data => {
     /*----- Reset Error Massage field------- */
@@ -108,22 +116,46 @@ const Login = () => {
                       </span>
                     )}
                   </div>
-                  <div className="form-control">
+                  <div className="form-control relative">
                     <label className="label">
                       <span className="label-text dark:text-stone-200">
                         Password
                       </span>
                     </label>
                     <input
-                      type="password"
+                      type={showPassword === false ? "password" : "text"}
                       name="password"
                       placeholder="password"
                       className="input input-bordered dark:bg-[#1B1B1B]"
-                      {...register("password", { required: true })}
+                      {...register("password", { required: true,  maxLength: 20 })}
                     />
-                     {errors.password && (
+                    {/* ---------Password Shower------ */}
+                    <span
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute top-12 cursor-pointer right-5"
+                    >
+                      {" "}
+                      {showPassword === false ? (
+                        <AiFillEye
+                          title="See Password"
+                          className="text-lg inline"
+                        />
+                      ) : (
+                        <AiFillEyeInvisible
+                          title="Hide Password"
+                          className="text-lg inline"
+                        />
+                      )}{" "}
+                    </span>
+
+                    {errors.password?.type === "required" && (
                       <span className="text-red-500 text-sm">
                         <small>Please enter your password to login</small>
+                      </span>
+                    )}
+                    {errors.password?.type === "maxLength" && (
+                      <span className="text-red-500 text-sm">
+                        <small>Password maximum length is 20</small>
                       </span>
                     )}
                     <label className="label">
