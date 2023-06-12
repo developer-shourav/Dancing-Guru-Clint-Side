@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
@@ -19,7 +20,7 @@ const Register = () => {
     reset,
   } = useForm();
 
-  const { createEmailPassUser, registerWithGoogle, registerWithGitHub } = useContext(AuthContext);
+  const { createEmailPassUser, registerWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const redirectLocation = location?.state?.from?.pathname || '/home';
@@ -31,6 +32,7 @@ const Register = () => {
       'Register Successful',
       'success'
     )
+    reset()
   }
 
 
@@ -57,7 +59,48 @@ const Register = () => {
       setErrorMessage("Error: Your 'password' and 'Confirm password' aren't the same.")
       return ;
     }
+
+    else{
+      /* ------- Email password User creation -------------- */
+      createEmailPassUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        addUserNameAndImage(result.user, name, photo);
+        registerSuccessAlt()
+      })
+  
+      .catch((error) => {
+        setErrorMessage(error.message.slice(10))
+      });
+      }
   };
+
+/* ------- Adding user name and Profile picture -------------- */
+  const addUserNameAndImage = (user, userName, imageUrl) => {
+    setErrorMessage('')
+    updateProfile(user, { displayName: userName, photoURL: imageUrl })
+      .then(() => {
+        navigate(redirectLocation);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message.slice(10))
+      });
+  };
+
+  /* ------- Google Register with popup-------------- */
+  const handleGoogleRegister = () => {
+    setErrorMessage('')
+    registerWithGoogle()
+    .then( result => {
+      const loggedInUser = result.user;
+      navigate(redirectLocation)
+      registerSuccessAlt()
+      
+    })
+    .catch( error =>{
+      setErrorMessage(error.message.slice(10))
+    })
+  }
 
   return (
     <div className="pb-20  bg-slate-200 dark:bg-[#1B1B1B] ">
@@ -242,7 +285,7 @@ const Register = () => {
                   <hr className="inline-block border-1 w-3/6 border-[#E4444C]" />
                 </div>
 
-                <button className="btn bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline ">
+                <button onClick={handleGoogleRegister} className="btn bg-[#1D1D1D]  text-white rounded-full  normal-case btn-outline ">
                   <img className="w-5 me-2" src={GoogleIcon} alt="" />
                   Register With Google
                 </button>
