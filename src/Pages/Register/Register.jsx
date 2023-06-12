@@ -1,7 +1,12 @@
 import useTitle from "../../hooks/useTitle";
 import GoogleIcon from "../../assets/images/icons/google.png";
-import { Link, ScrollRestoration } from "react-router-dom";
+import { Link, ScrollRestoration, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
+
+
 const Register = () => {
   /* ---------Dynamic Title based on Page-------- */
   useTitle("Register");
@@ -14,8 +19,44 @@ const Register = () => {
     reset,
   } = useForm();
 
+  const { createEmailPassUser, registerWithGoogle, registerWithGitHub } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirectLocation = location?.state?.from?.pathname || '/home';
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const registerSuccessAlt = () => {
+    Swal.fire(
+      'Welcome',
+      'Register Successful',
+      'success'
+    )
+  }
+
+
   const onSubmit = (data) => {
-    console.log(data);
+     /*----- Reset Error Massage ------- */
+     setErrorMessage('')
+    /* -------Form Data Collection -------------- */
+    const name = data?.name;
+    const email = data?.email;
+    const password = data?.password;
+    const confirmPassword = data?.passwordConfirm;
+    const photo = data?.photo;
+
+    const newUser = {
+      name,
+      email,
+      password,
+      confirmPassword,
+      photo
+    };
+     /* -----------Password Validation----------- */
+     if( password !== confirmPassword){
+     
+      setErrorMessage("Error: Your 'password' and 'Confirm password' aren't the same.")
+      return ;
+    }
   };
 
   return (
@@ -185,7 +226,7 @@ const Register = () => {
                     </label>
                   </div>
                   {/* --------Error Message -------- */}
-                  <p className="text-red-500 "></p>
+                  <p className="text-red-500 ">{errorMessage}</p>
                   <div className="form-control mt-2">
                     <input
                       className="btn rounded-full bg-[#E4444C] text-white border-0 hover:bg-[#88191e]"
