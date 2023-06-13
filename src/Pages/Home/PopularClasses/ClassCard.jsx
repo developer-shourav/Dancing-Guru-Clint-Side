@@ -7,7 +7,7 @@ const ClassCard = ({item}) => {
         <img
           src={classImage}
           className=" h-52 "
-          alt="Toy image"
+          alt=""
         />
       </figure>
       <div className="card-body mt-4 dark:text-stone-100 rounded-b-md font-[500] bg-[#e4444c] hover:text-stone-200 hover:bg-[#89183E]">

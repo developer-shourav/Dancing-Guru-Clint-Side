@@ -1,5 +1,6 @@
 import useTitle from "../../../hooks/useTitle";
 import PopularClasses from "../PopularClasses/PopularClasses";
+import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import TopSlider from "../TopSlider/TopSlider";
 import { ScrollRestoration } from "react-router-dom";
 
@@ -14,6 +15,9 @@ const Home = () => {
 
        {/* --------Popular Classes section--------- */}
        <PopularClasses> </PopularClasses>
+
+       {/* --------Popular Instructors section--------- */}
+       <PopularInstructors> </PopularInstructors>
 
       <ScrollRestoration />
     </div>
