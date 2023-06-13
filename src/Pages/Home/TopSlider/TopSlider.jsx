@@ -17,7 +17,7 @@ import dancer2 from "../../../assets/images/homeSlider-img/dancer-2.png";
 import dancer3 from "../../../assets/images/homeSlider-img/dancer-3.png";
 const TopSlider = () => {
   return (
-    <div className="">
+    <div className="lg:mb-40">
       {/* ----------------Website Top Banner Slider --------------------- */}
       <Swiper
         spaceBetween={30}

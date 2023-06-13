@@ -1,6 +1,6 @@
 import useTitle from "../../../hooks/useTitle";
 import PopularClasses from "../PopularClasses/PopularClasses";
-import SendMail from "../PopularClasses/SendMail/SendMail";
+import SendMail from "../SendMail/SendMail";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import TopSlider from "../TopSlider/TopSlider";
 import { ScrollRestoration } from "react-router-dom";
