@@ -7,7 +7,7 @@ import NavBar from "../components/NavBar/NavBar";
 const MainLayout = () => {
     const navigation = useNavigation();
     return (
-        <div className="text-black dark:text-[#7D7D7D] bg-white dark:bg-[#1B1B1B]">
+        <div className="text-[#1f2937] dark:text-[#7D7D7D] bg-white dark:bg-[#1B1B1B]">
              <HeaderCTA> </HeaderCTA>
              <NavBar></NavBar>
              {/* ------Loading Spinner------ */}

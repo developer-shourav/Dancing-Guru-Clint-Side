@@ -1,9 +1,13 @@
 
 const AllClassCard = ({item}) => {
-    const {classImage, className, totalStudents, instructorName} = item;
+    const {_id, classImage, className, instructorName, price, availableSeats} = item;
+
+    const selectClass = id => {
+        console.log(id);
+    }
 
     return (
-        <div className="card rounded-b-md card-compact w-full  mx-auto bg-base-100 dark:bg-[#181818] box-shadow pt-5">
+        <div className="card  card-compact w-full  mx-auto bg-base-100 dark:bg-[#181818] box-shadow pt-5">
       <figure>
         <img
           src={classImage}
@@ -11,14 +15,22 @@ const AllClassCard = ({item}) => {
           alt=""
         />
       </figure>
-      <div className="card-body mt-4 dark:text-stone-100 rounded-b-md font-[500] bg-[#e4444c] hover:text-stone-200 hover:bg-[#89183E]">
+      <div className="card-body mt-4 dark:text-stone-200  dark:font-[500] ">
      
-        <h2 className=" text-lg md:text-xl font-bold">{className}</h2>
+        <h2 className=" text-lg md:text-xl font-bold border-b-4 border-dotted border-[#e4646a]  pb-2">{className}</h2>
+
         <div className="flex justify-between items-center">
-         <p className="text-[12px] md:text-md  ">Instructor: <span className="font-bold">{instructorName}</span></p>
-         <p className="text-[12px] md:text-md  ">Enrolled Student: <span className="font-bold">{totalStudents}</span></p>
-        
+         <h2 className="text-lg font-bold">Price: ${price}</h2>
+         <div className="md:text-[15px] font-[500]">Available seats:  <span className="font-bold">{availableSeats}</span></div>
         </div>
+
+        <div className="flex justify-between items-center">
+         <button className="btn btn-sm normal-case border-0 font-normal bg-[#89183E]  text-white px-3 py-1 rounded hover:bg-[#E4444c]" onClick={() => selectClass(_id)} >Select Class</button>
+         <div className="md:text-[15px] font-[500]">Instructor: <span className="font-bold">{instructorName}</span></div>
+        </div>
+
+      
+
       </div>
     </div>
     );
