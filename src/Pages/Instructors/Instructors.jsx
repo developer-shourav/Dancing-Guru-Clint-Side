@@ -7,9 +7,8 @@ const Instructors = () => {
     useTitle('Instructors')
     const allInstructors = useLoaderData();
 
-    console.log(allInstructors);
     return (
-        <div className="container mx-auto my-10 lg:my-20  pt-6 px-5">
+        <div className="container mx-auto mt-2 my-4 lg:my-20  pt-6 px-5">
             
         <div>
           <h2 className="text-center  text-2xl md:text-3xl lg:text-4xl  font-extrabold dark:text-[#E4444C]">All Instructors</h2>
