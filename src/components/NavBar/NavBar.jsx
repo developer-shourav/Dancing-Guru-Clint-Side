@@ -78,7 +78,7 @@ const NavBar = () => {
         <div className="navbar font-[500] dark:font-normal text-black    dark:text-stone-200   md:py-2">
           <div className="navbar-start w-7/12">
             <div className="dropdown">
-              <label tabIndex={0} className="text-xl lg:hidden">
+              <label tabIndex={0} className="text-xl md:text-2xl lg:hidden">
                 <FiMenu> </FiMenu>
               </label>
 
@@ -120,11 +120,11 @@ const NavBar = () => {
               </ul>
             </div>
 
-            <div className="flex items-center ps-4 md:ps-0">
-              <span className="logo-font-extra text-black dark:text-white  text-lg md:text-3xl  md:ms-0 ">
+            <div className="flex items-center ps-4 lg:ps-0">
+              <span className="logo-font-extra text-black dark:text-white  text-lg md:text-2xl lg:text-3xl  md:ms-0 ">
                 Dancing Guru
               </span>
-              <img src={WebLogo} className="w-10 md:w-16" alt="" />
+              <img src={WebLogo} className="w-10 md:w-14 lg:w-16" alt="" />
             </div>
           </div>
           <div className="navbar-center  hidden lg:flex">
