@@ -6,16 +6,16 @@ const ClassCard = ({item}) => {
       <figure>
         <img
           src={classImage}
-          className=" h-52"
+          className=" h-52 "
           alt="Toy image"
         />
       </figure>
-      <div className="card-body mt-4 dark:text-stone-200 rounded-b-md font-[500] bg-[#e4444c] hover:text-stone-200 hover:bg-[#89183E]">
+      <div className="card-body mt-4 dark:text-stone-100 rounded-b-md font-[500] bg-[#e4444c] hover:text-stone-200 hover:bg-[#89183E]">
      
-        <h2 className="text-lg font-bold">{className}</h2>
+        <h2 className=" text-lg md:text-xl font-bold">{className}</h2>
         <div className="flex justify-between items-center">
-         <p className="text-md ">Instructor: <span className="font-bold">{instructorName}</span></p>
-         <h2 className="">Enrolled Student: {totalStudents}</h2>
+         <p className="text-[12px] md:text-md  ">Instructor: <span className="font-bold">{instructorName}</span></p>
+         <p className="text-[12px] md:text-md  ">Enrolled Student: <span className="font-bold">{totalStudents}</span></p>
         
         </div>
       </div>
