@@ -26,7 +26,8 @@ const router = createBrowserRouter([
 
             {
                 path:'instructors',
-                element: <Instructors> </Instructors>
+                element: <Instructors> </Instructors>,
+                loader: () => fetch('https://dancing-guru-server.vercel.app/instructors')
             },
 
             {
