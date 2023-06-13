@@ -1,7 +1,17 @@
 import { IoIosSend } from "react-icons/io";
 import MailSvg from "../../../assets/images/form-img/email.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const SendMail = () => {
+
+  const {user} = useContext(AuthContext)
+  const handleMessageSubmit = event => {
+    event.preventDefault()
+    Swal.fire("Thank You", "Your message Successfully send", "success");
+    event.target.reset()
+  }
   return (
     <div className="container mx-auto mt-10 px-5">
       <div>
@@ -16,19 +26,21 @@ const SendMail = () => {
         </div>
 
         <div className="md:w-10/12 dark:text-stone-200 dark:lg:mt-5">
-          <form action="">
+          <form onSubmit={handleMessageSubmit}>
             <input
               className="w-full outline-none border-2 rounded ps-2 py-2  my-1 dark:bg-[#181818]  lg:my-2  border-[#E4444c] "
               type="text"
               name="name"
               placeholder="Your Name"
               required
+              defaultValue={user?.displayName}
             />
             <input
               className="w-full outline-none border-2 rounded ps-2 py-2  my-1 lg:my-2 dark:bg-[#181818]  border-[#E4444c] "
               type="email"
               name="email"
               placeholder="Your Email"
+              defaultValue={user?.email}
               required
             />
             <input

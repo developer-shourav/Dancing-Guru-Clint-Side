@@ -47,13 +47,7 @@ const Register = () => {
     const confirmPassword = data?.passwordConfirm;
     const photo = data?.photo;
 
-    const newUser = {
-      name,
-      email,
-      password,
-      confirmPassword,
-      photo,
-    };
+
     /* -----------Password Validation----------- */
     if (password !== confirmPassword) {
       setErrorMessage(
@@ -65,7 +59,7 @@ const Register = () => {
       createEmailPassUser(email, password)
         .then((result) => {
           const createdUser = result.user;
-          addUserNameAndImage(result.user, name, photo);
+          addUserNameAndImage(createdUser, name, photo);
           registerSuccessAlt();
         })
 

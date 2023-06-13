@@ -9,7 +9,6 @@ const PopularInstructors = () => {
         .then( data => setPopularInstructors(data))
     } , [])
 
-    console.log(popularInstructors);
     return (
         <div className="container mx-auto my-10 lg:my-24 lg:mb-40 pt-6 px-5">
             
