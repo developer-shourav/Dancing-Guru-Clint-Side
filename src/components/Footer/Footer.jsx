@@ -136,7 +136,7 @@ const Footer = () => {
       </div>
       <div className="text-center mt-5">
         <p>
-        &copy; all Copyright <span className="text-[#E4444C] logo-font-extra"> Dancing Guru </span> reserved.
+        &copy; All Copyright <span className="text-[#E4444C] logo-font-extra"> Dancing Guru </span> reserved.
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 /* -----------Main Font-----------  */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* -----------Logo Font-----------  */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 /* -----------Logo Font Extra-----------  */
@@ -11,7 +11,7 @@
 
 /* ----------Common Style----------- */
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -59,4 +59,8 @@ html{
 }
 a:hover{
     color:#E4444C;
+}
+
+.box-shadow{
+    box-shadow: 2px 2px 10px 1px #2d3e6386;
 }
