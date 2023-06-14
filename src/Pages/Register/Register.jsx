@@ -111,8 +111,27 @@ const Register = () => {
       .then((result) => {
         const loggedInUser = result.user;
         
-        navigate(redirectLocation);
-        registerSuccessAlt();
+        const savedUser = {
+          userName: loggedInUser?.displayName,
+          userImage: loggedInUser?.photoURL,
+          userEmail: loggedInUser?.email,
+          role:'user'
+        };
+
+        fetch("https://dancing-guru-server.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(savedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              registerSuccessAlt();
+              navigate(redirectLocation);
+            }
+          });
       })
       .catch((error) => {
         setErrorMessage(error.message.slice(10));
