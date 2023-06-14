@@ -20,7 +20,7 @@ const Dashboard = () => {
                 setUserRole(data?.role)
             }
         })
-    }, [user])
+    }, [])
 
 
     return (

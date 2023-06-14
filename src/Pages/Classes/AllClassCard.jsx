@@ -1,7 +1,30 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const AllClassCard = ({item}) => {
     const {_id, classImage, className, instructorName, price, availableSeats} = item;
 
+    /* ---------Taking user form DB and firebase----- */
+      const {user} = useContext(AuthContext);
+      const [dbUser, setDBUser] = useState(null)
+
+    /* -------------Define The user Role----------- */
+      const [userRole, setUserRole] = useState(null);
+    
+    
+    useEffect(() => {
+            fetch(`https://dancing-guru-server.vercel.app/users/${user?.email}`)
+            .then( res => res.json())
+            .then( data => {
+                if(user?.email === data.userEmail){
+                    setUserRole(data?.role)
+                }
+
+                setDBUser(data)
+
+            })
+    }, [])
+  
     const selectClass = id => {
         console.log(id);
     }
@@ -25,7 +48,7 @@ const AllClassCard = ({item}) => {
         </div>
 
         <div className="flex justify-between items-center">
-         <button className="btn btn-sm normal-case border-0 font-normal bg-[#89183E]  text-white px-3 py-1 rounded hover:bg-[#E4444c]" onClick={() => selectClass(_id)} >Select Class</button>
+         <button disabled={userRole ==='admin' || userRole ==='instructor' || availableSeats === 0} className="btn btn-sm normal-case border-0 font-normal bg-[#89183E]  text-white px-3 py-1 rounded hover:bg-[#E4444c]" onClick={() => selectClass(_id)} >Select Class</button>
          <div className="md:text-[15px] font-[500]">Instructor: <span className="font-bold">{instructorName}</span></div>
         </div>
 
