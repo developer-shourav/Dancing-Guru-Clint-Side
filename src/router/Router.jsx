@@ -6,8 +6,14 @@ import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivetRoutes from "./PrivetRoutes";
+import ManageClasses from "../Pages/Admin/ManageClasses/ManageClasses";
+import ManageUsers from "../Pages/Admin/ManageUsers/ManageUsers";
+import AddAClass from "../Pages/Instructor/AddAClass/AddAClass";
+import MyClasses from "../Pages/Instructor/MyClasses/MyClasses";
+import UserClass from "../Pages/Users/UserClass/UserClass";
+import EnrolledClass from "../Pages/Users/EnrolledClass/EnrolledClass";
+import Dashboard from "../Layouts/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -33,12 +39,7 @@ const router = createBrowserRouter([
             {
                 path:'classes',
                 element:<Classes> </Classes>,
-                loader: () => fetch('https://dancing-guru-server.vercel.app/classes')
-            },
-
-            {
-                path:'dashboard',
-                element:<PrivetRoutes> <Dashboard></Dashboard> </PrivetRoutes>
+                
             },
 
             {
@@ -53,6 +54,41 @@ const router = createBrowserRouter([
 
         ],
     },
+    {
+        path:'dashboard',
+        element:<PrivetRoutes><Dashboard> </Dashboard></PrivetRoutes>,
+        children:[
+          {
+            path:'home',
+            element: <h2 className="text-center text-4xl text-red-500">Welcome To Dashboard</h2>
+           },
+
+          {
+            path:'manageCls',
+            element:<ManageClasses> </ManageClasses>
+          },
+          {
+            path:'manageUsers',
+            element:<ManageUsers> </ManageUsers>
+          },
+          {
+            path:'addCls',
+            element:<AddAClass> </AddAClass>
+          },
+          {
+            path:'myClasses',
+            element:<MyClasses> </MyClasses>
+          },
+          {
+            path:'userClass',
+            element:<UserClass> </UserClass>
+          },
+          {
+            path:'enrolledCls',
+            element:<EnrolledClass> </EnrolledClass>
+          }
+        ]
+      }
 ])
 
 

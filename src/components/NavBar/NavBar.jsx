@@ -7,7 +7,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, reloader, setReloader } = useContext(AuthContext);
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -26,6 +26,14 @@ const NavBar = () => {
     }
   };
 
+  const showLoginAlert = () => {
+     Swal.fire({
+      title: "Please Login",
+      text: "You Have to Login first to see Dashboard",
+      icon: "warning",
+    });
+  }
+
   const menuItem = (
     <>
       <li>
@@ -38,9 +46,16 @@ const NavBar = () => {
         <NavLink to="/classes">Classes</NavLink>
       </li>
 
-      <li>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+      {
+        user && <li>
+        <NavLink to="/dashboard/home">Dashboard</NavLink>
       </li>
+      }
+      {
+        !user && <li>
+        <NavLink onClick={showLoginAlert} to="/dashboard/home">Dashboard</NavLink>
+      </li>
+      }
       <li>
         <NavLink to="/register">Register</NavLink>
       </li>
@@ -63,6 +78,7 @@ const NavBar = () => {
           .catch((error) => {
             console.log(error);
           });
+          setReloader(!reloader)
         Swal.fire({
           title: "Done !",
           text: "Log out successful",

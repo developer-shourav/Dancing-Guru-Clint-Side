@@ -1,12 +1,21 @@
-import { ScrollRestoration, useLoaderData } from "react-router-dom";
+import { ScrollRestoration } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
 import AllClassCard from "./AllClassCard";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Classes = () => {
       /* ---------Dynamic Title based on Page-------- */
       useTitle('Classes')
 
-      const allClasses = useLoaderData();
+      const {reloader} =useContext(AuthContext);
+      const [allClasses, setAllClasses] = useState([]);
+
+      useEffect(() => {
+        fetch('https://dancing-guru-server.vercel.app/classes')
+        .then( res => res.json())
+        .then( data => setAllClasses(data))
+      },[reloader])
     return (
         <div className="container mx-auto px-5 ">
            <div>

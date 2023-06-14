@@ -5,25 +5,26 @@ const AllClassCard = ({item}) => {
     const {_id, classImage, className, instructorName, price, availableSeats} = item;
 
     /* ---------Taking user form DB and firebase----- */
-      const {user} = useContext(AuthContext);
-      const [dbUser, setDBUser] = useState(null)
+      const { reloader, user} = useContext(AuthContext);
 
     /* -------------Define The user Role----------- */
       const [userRole, setUserRole] = useState(null);
+
+      const requestEmail = user?.email || 'abc@gmail.com';
     
     
     useEffect(() => {
-            fetch(`https://dancing-guru-server.vercel.app/users/${user?.email}`)
+            fetch(`https://dancing-guru-server.vercel.app/users/${requestEmail}`)
             .then( res => res.json())
             .then( data => {
                 if(user?.email === data.userEmail){
                     setUserRole(data?.role)
                 }
 
-                setDBUser(data)
+  
 
             })
-    }, [])
+    }, [reloader])
   
     const selectClass = id => {
         console.log(id);
