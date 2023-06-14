@@ -88,12 +88,13 @@ const Login = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            loginSuccessAlt()
+             loginSuccessAlt()
              navigate(redirectLocation)
           }
         });
       
-      
+        loginSuccessAlt()
+        navigate(redirectLocation) 
     })
     .catch( error =>{
       setErrorText(error.message.slice(10))

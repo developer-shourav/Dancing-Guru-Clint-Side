@@ -83,6 +83,10 @@ const Register = () => {
                 navigate(redirectLocation);
               }
             });
+
+                reset();
+                registerSuccessAlt();
+                navigate(redirectLocation);
           
         })
 
@@ -132,6 +136,9 @@ const Register = () => {
               navigate(redirectLocation);
             }
           });
+
+          registerSuccessAlt();
+          navigate(redirectLocation);
       })
       .catch((error) => {
         setErrorMessage(error.message.slice(10));

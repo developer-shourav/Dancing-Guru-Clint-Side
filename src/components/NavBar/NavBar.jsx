@@ -72,7 +72,6 @@ const NavBar = () => {
     });
   };
 
-  console.log(user);
   return (
     <div className="bg-stone-100   dark:bg-[#0d0d0d] sticky top-0 left-0 z-50 shadow-lg">
       <div className="container  mx-auto">
