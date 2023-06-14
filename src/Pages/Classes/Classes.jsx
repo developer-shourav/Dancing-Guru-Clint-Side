@@ -7,8 +7,6 @@ const Classes = () => {
       useTitle('Classes')
 
       const allClasses = useLoaderData();
-
-      console.log(allClasses);
     return (
         <div className="container mx-auto px-5 ">
            <div>

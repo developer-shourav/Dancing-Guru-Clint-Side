@@ -7,7 +7,7 @@ const AllClassCard = ({item}) => {
     }
 
     return (
-        <div className="card  card-compact w-full  mx-auto bg-base-100 dark:bg-[#181818] box-shadow pt-5">
+        <div className={`card  card-compact w-full  mx-auto ${availableSeats === 0 ? 'bg-red-500 dark:bg-red-500 text-stone-200' : 'bg-base-100' } dark:bg-[#181818] box-shadow pt-5`}>
       <figure>
         <img
           src={classImage}
@@ -15,7 +15,7 @@ const AllClassCard = ({item}) => {
           alt=""
         />
       </figure>
-      <div className="card-body mt-4 dark:text-stone-200  dark:font-[500] ">
+      <div className="card-body  mt-4 dark:text-stone-200  dark:font-[500] ">
      
         <h2 className=" text-lg md:text-xl font-bold border-b-4 border-dotted border-[#e4646a]  pb-2">{className}</h2>
 
