@@ -2,7 +2,55 @@ import Swal from "sweetalert2";
 
 
 const DataRow = ({item, setReloadClass, reloadClass} ) => {
-     const {_id, classImage, className, instructorName} = item;
+     const {_id, classImage, className, instructorName, availableSeats, price, studentEmail, classId } = item;
+
+
+     const deleteAfterPayment = () => {
+      fetch(`https://dancing-guru-server.vercel.app/selectedCls/${_id}`, {
+              method:'DELETE'
+            })
+            .then( res => res.json())
+            .then (data => {
+              if(data.deletedCount > 0){
+                setReloadClass(!reloadClass)
+      
+              }
+            })
+     };
+
+
+
+     const payment = () => {
+
+      const paidClass = {
+        classImage,
+        className,
+        instructorName,
+        availableSeats,
+        price,
+        studentEmail,
+        payment:'paid',
+        classId
+      }
+
+      fetch("https://dancing-guru-server.vercel.app/paidCls", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(paidClass),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          deleteAfterPayment()
+          Swal.fire("Done", "payment successful", "success");
+           
+        }
+      });
+     }
+
+
      const handleDelete = () => {
         Swal.fire({
           title: "Are you sure?",
@@ -52,7 +100,7 @@ const DataRow = ({item, setReloadClass, reloadClass} ) => {
         
         <td><button onClick={handleDelete}  className="btn bg-red-500 hover:bg-red-600">Delete</button></td>
         <th>
-         <button className="btn btn-primary" > Pay</button>
+         <button onClick={payment} className="btn btn-primary" > Pay</button>
         </th>
       </tr>
     );
