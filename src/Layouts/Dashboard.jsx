@@ -8,8 +8,9 @@ import {
   FaBook,
   FaUsers,
 } from "react-icons/fa";
-
+import {BsFillAwardFill} from 'react-icons/bs'
 import { SiGoogleclassroom } from "react-icons/si";
+import { IoMdDoneAll } from "react-icons/Io";
 import { TfiMenuAlt } from "react-icons/tfi";
 import useTitle from "../hooks/useTitle";
 import { useContext, useEffect, useState } from "react";
@@ -103,12 +104,12 @@ const Dashboard = () => {
              </li>
              <li>
                <NavLink to="/dashboard/userClass">
-                 <FaCalendarAlt /> My Selected Classes
+                 <IoMdDoneAll /> My Selected Classes
                </NavLink>
              </li>
              <li>
                <NavLink to="/dashboard/enrolledCls">
-                 <FaWallet /> My Enrolled Classes
+                 <BsFillAwardFill /> My Enrolled Classes
                </NavLink>
              </li>
             
