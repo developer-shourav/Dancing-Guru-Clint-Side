@@ -1,17 +1,17 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import {
-  FaShoppingCart,
-  FaWallet,
-  FaCalendarAlt,
   FaHome,
   FaUtensils,
-  FaBook,
   FaUsers,
 } from "react-icons/fa";
 import {BsFillAwardFill} from 'react-icons/bs'
 import { SiGoogleclassroom } from "react-icons/si";
 import { IoMdDoneAll } from "react-icons/Io";
 import { TfiMenuAlt } from "react-icons/tfi";
+import {MdLibraryAdd, MdOutlineBallot} from "react-icons/md";
+
+
+
 import useTitle from "../hooks/useTitle";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProviders";
@@ -84,12 +84,12 @@ const Dashboard = () => {
                 
                 <li>
                   <NavLink to="/dashboard/addCls">
-                    <FaHome /> Add a Class
+                    <MdLibraryAdd /> Add a Class
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/myClasses">
-                    <FaCalendarAlt /> My Classes
+                    <MdOutlineBallot className="text-lg" /> My Classes
                   </NavLink>
                 </li> 
               </>
