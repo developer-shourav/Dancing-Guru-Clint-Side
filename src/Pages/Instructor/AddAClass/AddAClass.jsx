@@ -141,6 +141,7 @@ const AddAClass = () => {
                     className="input input-bordered  w-full"
                     name="instructorName"
                     value={user?.displayName}
+                    readOnly
                     required
                   />
                 </label>
@@ -156,6 +157,7 @@ const AddAClass = () => {
                     placeholder="Input instructor Email"
                     className="input input-bordered  w-full"
                     name="instructorEmail"
+                    readOnly
                     value={user?.email}
                   />
                 </label>
