@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import {
   FaShoppingCart,
   FaWallet,
@@ -8,8 +8,8 @@ import {
   FaBook,
   FaUsers,
 } from "react-icons/fa";
-import { GrMenu } from "react-icons/gr";
-import { MdLocalDining } from "react-icons/md";
+
+import { SiGoogleclassroom } from "react-icons/si";
 import { TfiMenuAlt } from "react-icons/tfi";
 import useTitle from "../hooks/useTitle";
 import { useContext, useEffect, useState } from "react";
@@ -48,15 +48,15 @@ const Dashboard = () => {
           Open Dashboard
         </label>
       </div>
-      <div className="drawer-side bg-[#d4d4d4]">
+      <div className="drawer-side bg-blue-200">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full  ">
+        <ul className="menu p-4 md:w-80 h-full  ">
 
 {/* --------------User and Admin Based Dynamic Dashboard----------- */}
             {
                 userRole === 'admin' && <>
                 <li>
-                  <NavLink to="/dashboard/home">
+                  <NavLink  to="/dashboard/home">
                     <FaHome /> Admin Home
                   </NavLink>
                 </li>
@@ -96,7 +96,7 @@ const Dashboard = () => {
 
            {
              userRole === 'user' &&  <>
-             <li>
+             <li className="">
                <NavLink to="/dashboard/home">
                  <FaHome /> Student Home
                </NavLink>
@@ -129,12 +129,12 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/instructors">
-              <GrMenu /> All Instructors
+              <FaUsers /> All Instructors
             </NavLink>
           </li>
           <li>
             <NavLink to="/classes">
-              <MdLocalDining /> All Classes
+              <SiGoogleclassroom /> All Classes
             </NavLink>
           </li>
         </ul>

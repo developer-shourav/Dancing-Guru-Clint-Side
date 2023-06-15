@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         children:[
           {
             path:'home',
-            element: <h2 className="text-center text-4xl text-red-500">Welcome To Dashboard</h2>
+            element: <h2 className="text-center font-bold text-2xl md:text-3xl lg:text-4xl ">Welcome To Dashboard</h2>
            },
 
           {
