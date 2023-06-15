@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const AllClassCard = ({item}) => {
     const {_id, classImage, className, instructorName, price, availableSeats} = item;
@@ -27,7 +28,37 @@ const AllClassCard = ({item}) => {
     }, [reloader])
   
     const selectClass = id => {
-        console.log(id);
+        if(!user){
+          Swal.fire("Please Login", "You Have to login first to select a class", "warning");
+          return
+        }
+
+        const classSelected = {
+          classImage: classImage,
+          className: className,
+          instructorName: instructorName,
+          availableSeats:availableSeats,
+          price:price,
+          studentEmail:user?.email,
+          payment:'unpaid',
+          classId:id
+        }
+
+        fetch("https://dancing-guru-server.vercel.app/selectedCls", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(classSelected),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            Swal.fire("Done", "Successfully Class Selected", "success");
+             
+          }
+        });
+
     }
 
     return (
