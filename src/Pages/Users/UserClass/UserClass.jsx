@@ -5,7 +5,7 @@ import DataRow from "./DataRow";
 const UserClass = () => {
      const [selectedClass , setSelectedClass] = useState([]);
      const {user} = useContext(AuthContext);
-     const [reloadClass, setReloadClass] = useState(true)
+     const [reloadClass, setReloadClass] = useState(true);
  
      useEffect(() => {
          fetch(`https://dancing-guru-server.vercel.app/selectedCls/${user?.email}`)
