@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 
 const DataRow = ({item, setReloadClass, reloadClass} ) => {
-     const {_id, classImage, className, instructorName, availableSeats, price, studentEmail, classId } = item;
+     const {_id, classImage, className, instructorName, availableSeats, price, studentEmail, totalStudents, classId } = item;
 
 
      const deleteAfterPayment = () => {
@@ -18,6 +18,29 @@ const DataRow = ({item, setReloadClass, reloadClass} ) => {
             })
      };
 
+     const updateClassData = () => {
+      const updatedAvailableSeats = availableSeats - 1;
+      const updatedTotalStudents = totalStudents + 1;
+      const updatedClass = {
+        updatedAvailableSeats,
+        updatedTotalStudents
+      }
+
+      fetch(`https://dancing-guru-server.vercel.app/classes/${classId}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedClass),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+           console.log(' ');
+        }
+      });
+     }
+
 
 
      const payment = () => {
@@ -26,7 +49,6 @@ const DataRow = ({item, setReloadClass, reloadClass} ) => {
         classImage,
         className,
         instructorName,
-        availableSeats,
         price,
         studentEmail,
         payment:'paid',
@@ -43,6 +65,7 @@ const DataRow = ({item, setReloadClass, reloadClass} ) => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
+          updateClassData()
           deleteAfterPayment()
           Swal.fire("Done", "payment successful", "success");
            

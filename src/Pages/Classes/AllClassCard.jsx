@@ -3,7 +3,7 @@ import { AuthContext } from "../../providers/AuthProviders";
 import Swal from "sweetalert2";
 
 const AllClassCard = ({item}) => {
-    const {_id, classImage, className, instructorName, price, availableSeats} = item;
+    const {_id, classImage, className, instructorName, price, availableSeats, totalStudents} = item;
 
     /* ---------Taking user form DB and firebase----- */
       const { reloader, user} = useContext(AuthContext);
@@ -38,6 +38,7 @@ const AllClassCard = ({item}) => {
           className: className,
           instructorName: instructorName,
           availableSeats:availableSeats,
+          totalStudents:totalStudents,
           price:price,
           studentEmail:user?.email,
           payment:'unpaid',
