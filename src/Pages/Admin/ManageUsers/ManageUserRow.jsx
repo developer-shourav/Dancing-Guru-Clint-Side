@@ -47,6 +47,10 @@ const ManageUserRow = ({ singleUser, recalling, setRecalling }) => {
       <td>{userEmail}</td>
 
       <td>{role === 'user' ? 'student' : role}</td>
+
+      <td><button onClick={() => handleUpdateRoll('instructor')} disabled={role === 'instructor'} className="btn btn-sm btn-info normal-case rounded border-0 shadow-[#00000081] shadow-md  "> Make Instructor</button></td>
+
+      <td><button onClick={() => handleUpdateRoll('admin')} disabled={role === 'admin'} className="btn btn-sm rounded normal-case hover:bg-[#E4444c] bg-[#89183E] shadow-[#00000081] shadow-md text-white hover:text-white border-0"> Make Admin</button></td>
     </tr>
   );
 };
