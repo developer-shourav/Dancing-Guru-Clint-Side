@@ -51,7 +51,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side bg-blue-200">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu font-bold p-4 md:w-80 h-full  ">
+        <ul className="menu font-bold p-4  h-full  ">
 
 {/* --------------User and Admin Based Dynamic Dashboard----------- */}
             {
