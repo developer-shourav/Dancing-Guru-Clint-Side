@@ -1,28 +1,28 @@
-import { Link } from "react-router-dom";
+
 import Swal from "sweetalert2";
 
 const ManageUserRow = ({ singleUser, recalling, setRecalling }) => {
   const { _id, userName, userImage, userEmail, role } = singleUser;
 
-  const updateStat = (statValue) => {
-    const newStatus = statValue;
+  const handleUpdateRoll = (statValue) => {
+    const newRole = statValue;
 
-    const updatedStatus = {
-      newStatus,
+    const updatedRole = {
+      newRole,
     };
 
-    fetch(`https://dancing-guru-server.vercel.app/classesStat/${_id}`, {
+    fetch(`https://dancing-guru-server.vercel.app/usersRoll/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updatedStatus),
+      body: JSON.stringify(updatedRole),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount >= 1) {
           setRecalling(!recalling);
-          Swal.fire("Well done !", "Status Updated", "success");
+          Swal.fire("Well done !", `${userName} is ${newRole} now`, "success");
         }
       });
   };
