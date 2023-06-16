@@ -8,7 +8,7 @@ const MyClasses = () => {
      const [instClasses, setInstClasses] = useState([]);
 
      useEffect(()=> {
-        fetch(`https://dancing-guru-server.vercel.app/classes/${user?.email}`)
+        fetch(`https://dancing-guru-server.vercel.app/classesIns/${user?.email}`)
         .then( res => res.json())
         .then( data => setInstClasses(data))
      } ,[])

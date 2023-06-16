@@ -3,11 +3,12 @@ import ManageClassesRow from "./ManageClassesRow";
 
 const ManageClasses = () => {
     const [allClasses, setAllClasses] = useState([]);
+    const [recalling, setRecalling] = useState(true);
     useEffect(() =>{
         fetch('https://dancing-guru-server.vercel.app/classes')
         .then( res => res.json())
         .then( data => setAllClasses(data))
-    } , []);
+    } , [recalling]);
 
     return ( 
         <div className=" w-full h-full  mx-auto ">
@@ -36,7 +37,7 @@ const ManageClasses = () => {
             {/* --------show data -------------- */}
            {
             allClasses?.map( item  => <ManageClassesRow
-            key={item._id} item={item} 
+            key={item._id} item={item} recalling={recalling} setRecalling={setRecalling}
             > 
             </ManageClassesRow>)
            }
