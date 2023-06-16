@@ -23,11 +23,12 @@ const MyClasses = () => {
         <table className="table w-full ">
           {/* head */}
           <thead className="font-extrabold ">
-            <tr className="">
+            <tr className="text-black">
              
-              <th className=" text-[16px]">Class Name & Image</th>
-              <th className=" text-[16px]">Instructor</th>
-              <th className=" text-[16px]">Price</th>
+              <th className=" text-[14px]">Class Name & Image</th>
+              <th className=" text-[14px]">Instructor</th>
+              <th className=" text-[14px]">Total Enrolled Students</th>
+              <th className=" text-[14px]">Status</th>
               <th></th>
             </tr>
           </thead>

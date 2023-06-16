@@ -1,14 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
   FaHome,
-  FaUtensils,
   FaUsers,
+  FaUsersCog
 } from "react-icons/fa";
 import {BsFillAwardFill} from 'react-icons/bs'
 import { SiGoogleclassroom } from "react-icons/si";
 import { IoMdDoneAll } from "react-icons/Io";
-import { TfiMenuAlt } from "react-icons/tfi";
 import {MdLibraryAdd, MdOutlineBallot} from "react-icons/md";
+import {AiOutlineFileProtect} from 'react-icons/ai';
 
 
 
@@ -51,24 +51,24 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side bg-blue-200">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 md:w-80 h-full  ">
+        <ul className="menu font-bold p-4 md:w-80 h-full  ">
 
 {/* --------------User and Admin Based Dynamic Dashboard----------- */}
             {
                 userRole === 'admin' && <>
                 <li>
                   <NavLink  to="/dashboard/home">
-                    <FaHome /> Admin Home
+                    <FaHome className="text-xl" /> Admin Home
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/manageCls">
-                    <FaUtensils /> Manage Classes
+                    <AiOutlineFileProtect className="text-xl" /> Manage Classes
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/manageUsers">
-                    <TfiMenuAlt /> Manage Users
+                    <FaUsersCog className="text-xl" /> Manage Users
                   </NavLink>
                 </li>
               </>
@@ -78,18 +78,18 @@ const Dashboard = () => {
                 userRole === 'instructor' && <>
                 <li>
                   <NavLink to="/dashboard/home">
-                    <FaHome /> Instructor Home
+                    <FaHome className="text-xl" /> Instructor Home
                   </NavLink>
                 </li>
                 
                 <li>
                   <NavLink to="/dashboard/addCls">
-                    <MdLibraryAdd /> Add a Class
+                    <MdLibraryAdd className="text-xl" /> Add a Class
                   </NavLink>
                 </li>
                 <li>
                   <NavLink to="/dashboard/myClasses">
-                    <MdOutlineBallot className="text-lg" /> My Classes
+                    <MdOutlineBallot className="text-xl" /> My Classes
                   </NavLink>
                 </li> 
               </>
@@ -99,17 +99,17 @@ const Dashboard = () => {
              userRole === 'user' &&  <>
              <li className="">
                <NavLink to="/dashboard/home">
-                 <FaHome /> Student Home
+                 <FaHome className="text-xl" /> Student Home
                </NavLink>
              </li>
              <li>
                <NavLink to="/dashboard/userClass">
-                 <IoMdDoneAll /> My Selected Classes
+                 <IoMdDoneAll className="text-xl" /> My Selected Classes
                </NavLink>
              </li>
              <li>
                <NavLink to="/dashboard/enrolledCls">
-                 <BsFillAwardFill /> My Enrolled Classes
+                 <BsFillAwardFill className="text-xl" /> My Enrolled Classes
                </NavLink>
              </li>
             
@@ -124,18 +124,18 @@ const Dashboard = () => {
 
           <li>
             <NavLink to="/">
-              <FaHome />
+              <FaHome className="text-xl" />
               Home
             </NavLink>
           </li>
           <li>
             <NavLink to="/instructors">
-              <FaUsers /> All Instructors
+              <FaUsers className="text-xl" /> All Instructors
             </NavLink>
           </li>
           <li>
             <NavLink to="/classes">
-              <SiGoogleclassroom /> All Classes
+              <SiGoogleclassroom className="text-xl" /> All Classes
             </NavLink>
           </li>
         </ul>

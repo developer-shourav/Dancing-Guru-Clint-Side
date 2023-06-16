@@ -1,6 +1,6 @@
 
 const MyClassesRow = ({item}) => {
-    const {classImage, className, instructorName, price } = item;
+    const {classImage, className, instructorName, totalStudents, status } = item;
     return (
         <tr>
         <td>
@@ -17,8 +17,11 @@ const MyClassesRow = ({item}) => {
         </td>
         <td>{instructorName}</td>
         
-        <td>${price}</td>
-        
+        <td>{totalStudents}</td>
+        <td>{status}</td>
+        {
+          status ==='denied' && <td> <button className="btn btn-sm btn-primary"> See Feedback</button></td>
+        }
       </tr>
     );
 };
