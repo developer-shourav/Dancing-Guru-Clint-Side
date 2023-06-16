@@ -14,6 +14,7 @@ import MyClasses from "../Pages/Instructor/MyClasses/MyClasses";
 import UserClass from "../Pages/Users/UserClass/UserClass";
 import EnrolledClass from "../Pages/Users/EnrolledClass/EnrolledClass";
 import Dashboard from "../Layouts/Dashboard";
+import SendFeedback from "../Pages/Admin/SendFeedback/SendFeedback";
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,11 @@ const router = createBrowserRouter([
           {
             path:'enrolledCls',
             element:<EnrolledClass> </EnrolledClass>
+          },
+          {
+            path:'feedback/:id',
+            element:<SendFeedback> </SendFeedback>,
+            loader: ({params}) => fetch(`https://dancing-guru-server.vercel.app/classes/${params.id}`)
           }
         ]
       }

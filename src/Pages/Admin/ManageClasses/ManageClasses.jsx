@@ -27,7 +27,7 @@ const ManageClasses = () => {
               <th className=" text-[14px]">Status</th>
               <th></th>
               <th></th>
-              <th></th>
+              <th className=" text-[14px]">Feedback</th>
             </tr>
           </thead>
           <tbody className="text-[13px]" >
