@@ -24,9 +24,9 @@ const ManageClassesRow = ({item}) => {
         <td>${price}</td>
         <td>{status}</td>
         <td> <button disabled={status === 'approved' || status === 'denied'} className="btn font-[500] btn-sm bg-green-600 hover:bg-green-700 px-1 py-1 rounded text-white text-[12px] ">Approve</button></td>
-        <td> <button disabled={status === 'approved' || status === 'denied'} className=" btn btn-sm font-[500] bg-red-600 hover:bg-red-700  px-1 py-1 rounded text-white text-[12px] ">Deny</button></td>
+        <td> <button disabled={status === 'approved' || status === 'denied'} className=" btn btn-sm font-[500] bg-red-600 hover:bg-red-700   rounded text-white text-[12px] ">Deny</button></td>
         
-        <td> <Link to={`/dashboard/feedback/${_id}`} className=" btn font-[500] bg-blue-700 btn-sm hover:bg-blue-500 hover:text-white px-1 py-1 rounded text-white text-[12px] ">Send Feedback</Link></td>
+        <td> <Link to={`/dashboard/feedback/${_id}`} className=" btn font-[500] bg-blue-700 btn-sm hover:bg-blue-500 hover:text-white  rounded text-white text-[12px] ">Send Feedback</Link></td>
         
            
 

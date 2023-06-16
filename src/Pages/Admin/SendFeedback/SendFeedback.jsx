@@ -1,8 +1,10 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import {IoIosSend} from 'react-icons/io';
 import {FaArrowLeft} from 'react-icons/fa';
+import Swal from "sweetalert2";
 const SendFeedback = () => {
   const feedbackClass = useLoaderData();
+  const {id}= useParams();
   const feedbackData = feedbackClass[0]?.feedback;
 
 
@@ -11,9 +13,23 @@ const SendFeedback = () => {
     event.preventDefault()
     const form = event.target;
     const updatedFeedback = form.message.value;
-    console.log(updatedFeedback);
-    form.reset()
+    fetch(`https://dancing-guru-server.vercel.app/classesFDB/${id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedFeedback),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            Swal.fire("Well done !", "Feedback Sending Successful", "success");
+            form.reset()
+          }
+        });
+   
   }
+
   return (
     <div className="container mx-auto h-full ">
       <h2 className="text-center text-2xl font-bold my-10">Send Feedback</h2>
