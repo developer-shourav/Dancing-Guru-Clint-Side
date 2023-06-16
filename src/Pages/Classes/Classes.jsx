@@ -12,7 +12,7 @@ const Classes = () => {
       const [allClasses, setAllClasses] = useState([]);
 
       useEffect(() => {
-        fetch('https://dancing-guru-server.vercel.app/classes')
+        fetch('https://dancing-guru-server.vercel.app/classesApd')
         .then( res => res.json())
         .then( data => setAllClasses(data))
       },[reloader])

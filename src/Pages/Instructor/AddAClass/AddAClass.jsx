@@ -21,6 +21,7 @@ const AddAClass = () => {
     const status ='pending';
     const totalStudents = 0;
     const instructorImage = user?.photoURL;
+    const feedback= ' ';
 
 
     const addClass = {
@@ -32,7 +33,8 @@ const AddAClass = () => {
       instructorImage,
       totalStudents,
       price,
-      status
+      status,
+      feedback
     };
    
    // Send Data to the server

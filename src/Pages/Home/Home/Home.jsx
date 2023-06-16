@@ -22,7 +22,7 @@ const Home = () => {
 
        {/* --------Send Massage section (Extra)--------- */}
         <SendMail> </SendMail>
-
+        
       <ScrollRestoration />
     </div>
   );

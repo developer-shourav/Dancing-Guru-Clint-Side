@@ -1,6 +1,6 @@
 
 const ManageClassesRow = ({item}) => {
-
+     
     const {classImage, className, instructorName, instructorEmail, availableSeats, status, price } = item;
     return (
         <tr >
@@ -22,12 +22,12 @@ const ManageClassesRow = ({item}) => {
         <td>{availableSeats}</td>
         <td>${price}</td>
         <td>{status}</td>
-        <td> <button className=" bg-green-600 hover:bg-green-700 px-1 py-1 rounded text-white text-[12px] ">Approve</button></td>
-        <td> <button className=" bg-red-600 hover:bg-red-700 px-1 py-1 rounded text-white text-[12px] ">Deny</button></td>
-        <td> <button className=" bg-blue-700 hover:bg-blue-500 px-1 py-1 rounded text-white text-[12px] ">Feedback</button></td>
+        <td> <button disabled={status === 'approved' || status === 'denied'} className="btn font-[500] btn-sm bg-green-600 hover:bg-green-700 px-1 py-1 rounded text-white text-[12px] ">Approve</button></td>
+        <td> <button disabled={status === 'approved' || status === 'denied'} className=" btn btn-sm font-[500] bg-red-600 hover:bg-red-700  px-1 py-1 rounded text-white text-[12px] ">Deny</button></td>
+        <td> <button className=" btn font-[500] bg-blue-700 btn-sm hover:bg-blue-500 px-1 py-1 rounded text-white text-[12px] ">Send Feedback</button></td>
        
       </tr>
-    );
+    );  
 };
 
 export default ManageClassesRow;
