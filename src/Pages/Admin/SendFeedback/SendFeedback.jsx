@@ -25,7 +25,7 @@ const SendFeedback = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.insertedId) {
+          if(data.modifiedCount >= 1){
             Swal.fire("Well done !", "Feedback Sending Successful", "success");
             form.reset()
           }
@@ -42,7 +42,7 @@ const SendFeedback = () => {
           className="textarea border-2 textarea-info h-24 w-full md:w-8/12 flex items-start mx-auto"
           placeholder="Admin Feedback"
           name="message"
-          defaultValue={feedbackData}
+          
           required
         ></textarea>
 
