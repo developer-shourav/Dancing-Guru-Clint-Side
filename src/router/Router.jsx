@@ -15,6 +15,7 @@ import UserClass from "../Pages/Users/UserClass/UserClass";
 import EnrolledClass from "../Pages/Users/EnrolledClass/EnrolledClass";
 import Dashboard from "../Layouts/Dashboard";
 import SendFeedback from "../Pages/Admin/SendFeedback/SendFeedback";
+import Profile from "../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
             element: <h2 className="text-center font-bold text-2xl md:text-3xl lg:text-4xl ">Welcome To Dashboard</h2>
            },
 
+          {
+            path:'profile',
+            element:<Profile> </Profile>
+          },
+          
           {
             path:'manageCls',
             element:<ManageClasses> </ManageClasses>

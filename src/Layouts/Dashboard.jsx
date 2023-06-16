@@ -2,7 +2,10 @@ import { NavLink, Outlet } from "react-router-dom";
 import {
   FaHome,
   FaUsers,
-  FaUsersCog
+  FaUsersCog,
+  FaUserShield,
+  FaUserGraduate,
+  FaUserTie
 } from "react-icons/fa";
 import {BsFillAwardFill} from 'react-icons/bs'
 import { SiGoogleclassroom } from "react-icons/si";
@@ -62,6 +65,11 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink  to="/dashboard/profile">
+                    <FaUserShield className="text-xl" /> Admin Profile
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink to="/dashboard/manageCls">
                     <AiOutlineFileProtect className="text-xl" /> Manage Classes
                   </NavLink>
@@ -79,6 +87,11 @@ const Dashboard = () => {
                 <li>
                   <NavLink to="/dashboard/home">
                     <FaHome className="text-xl" /> Instructor Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/profile">
+                    <FaUserTie className="text-xl" /> Instructor Profile
                   </NavLink>
                 </li>
                 
@@ -100,6 +113,11 @@ const Dashboard = () => {
              <li className="">
                <NavLink to="/dashboard/home">
                  <FaHome className="text-xl" /> Student Home
+               </NavLink>
+             </li>
+             <li className="">
+               <NavLink to="/dashboard/profile">
+                 <FaUserGraduate className="text-xl" /> Student Profile
                </NavLink>
              </li>
              <li>
