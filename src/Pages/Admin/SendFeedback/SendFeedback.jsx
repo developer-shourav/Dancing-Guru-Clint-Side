@@ -12,7 +12,10 @@ const SendFeedback = () => {
     /* -----------Prevent Default Page load on Submit-------- */
     event.preventDefault()
     const form = event.target;
-    const updatedFeedback = form.message.value;
+    const newFeedback = form.message.value;
+    const updatedFeedback = {
+        newFeedback
+    };
     fetch(`https://dancing-guru-server.vercel.app/classesFDB/${id}`, {
         method: "PATCH",
         headers: {
