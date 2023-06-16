@@ -12,8 +12,6 @@ const MyClasses = () => {
         .then( res => res.json())
         .then( data => setInstClasses(data))
      } ,[])
-
-     console.log(instClasses);
      
     return ( 
         <div className=" w-full h-full  mx-auto ">
@@ -29,7 +27,8 @@ const MyClasses = () => {
               <th className=" text-[14px]">Instructor</th>
               <th className=" text-[14px]">Total Enrolled Students</th>
               <th className=" text-[14px]">Status</th>
-              <th></th>
+              <th className=" text-[14px]">Admin Feedback</th>
+              
             </tr>
           </thead>
           <tbody>
